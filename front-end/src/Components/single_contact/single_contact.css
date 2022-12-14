@@ -1,0 +1,91 @@
+.container {
+  width: 100%;
+  display: flex;
+  margin: auto;
+  height: 100vh;
+}
+/* <-----LEFT PART-----> */
+
+.left {
+  height: 100vh;
+  overflow-y: scroll;
+  width: 30%;
+  border: 1px solid rgb(90, 89, 89);
+  margin: auto;
+}
+
+.header {
+  padding: 20px 0px 20px 0px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.glob-text {
+  width: 90%;
+  height: 60px;
+  margin: auto;
+  /* margin: 20px 0px 20px 0px; */
+  border: 1px solid #7fd1de;
+  align-items: center;
+}
+.glob-text > p {
+  display: block;
+  margin: auto;
+  margin-top: 14px;
+  text-align: center;
+  color: gray;
+}
+.profile {
+  width: 100%;
+  margin: auto;
+  align-items: center;
+}
+.profile-up {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 15px 10px 20px 0px;
+}
+.profile-img {
+  display: block;
+  width: 25%;
+  border-radius: 100%;
+  margin-left: 10px;
+}
+.profile-text {
+  margin-left: 20px;
+  text-align: left;
+}
+.profile-name {
+  font-size: x-large;
+  color: rgb(90, 89, 89);
+}
+.profile-down {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* margin: 20px 0px 20px 0px; */
+  padding: 10px 0px 15px 0px;
+}
+.p-icons {
+  background-color: #ff7a59;
+
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+}
+/* <------MIDDLE PART------> */
+.middle {
+  width: 40%;
+  /* border: 1px solid rgb(90, 89, 89); */
+  background-color: #f5f8fa;
+  height: 100vh;
+}
+
+/* <-----RIGHT PART------> */
+.right {
+  width: 30%;
+  border: 1px solid rgb(90, 89, 89);
+}
