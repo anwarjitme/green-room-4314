@@ -14,14 +14,14 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { FcGoogle } from "react-icons/fc";
+ import { FcGoogle } from "react-icons/fc";
 const Signup = () => {
   return (
     <div>
       <Flex justify={"space-evenly"} gap={"60px"}>
         <VStack spacing={"10"} width={"35%"}>
           <Heading color={"blackAlpha.700"}>Create your free account</Heading>
-          <Button w={"full"} colorScheme={"blue"} leftIcon={<FcGoogle />}>
+          <Button w={"full"} colorScheme={"blue"} leftIcon={FcGoogle}>
             <Center>
               <Text>Sign in with Google</Text>
             </Center>

@@ -1,10 +1,13 @@
 .navbarcss {
     display: flex;
     flex-direction: column;
-    background-color: white;
+  
     color: rgb(33, 51, 67);
     position: sticky;
     top: -50px;
+    border-bottom: 1px solid white;
+    background-color: white;
+    z-index: 1000;
     cursor: pointer;
 }
 
@@ -12,7 +15,7 @@
 .up{
     display: flex;
     justify-content:space-between;
-    font-weight: 600;
+   
     font-size: 14px;
     margin-top: 15px;
     padding: 0px 80px;

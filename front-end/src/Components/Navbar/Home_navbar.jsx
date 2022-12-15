@@ -1,6 +1,7 @@
 import React from 'react'
 
 import {Link} from "react-router-dom"
+import CardComponents from './CardComponents'
 import Frontpage from './Frontpage'
 
 import "./navbar.css"
@@ -8,7 +9,8 @@ import "./navbar.css"
 const Home_navbar = () => {
 
   return (
-<>
+<div style={{display:"flex",flexDirection:"column"}}>
+
     <div className='navbarcss'>
 
 
@@ -70,10 +72,12 @@ const Home_navbar = () => {
        
    
 
-      
+    
     </div>
-  
-    </>
+   
+    <Frontpage/>
+    <CardComponents/>
+    </div>
   )
 }
 
