@@ -5,24 +5,22 @@ import {Box, Button, Heading,Text,Menu,MenuButton,MenuItem,MenuList,Drawer,
     DrawerOverlay,
     DrawerContent,
     DrawerCloseButton,
-Stack,FormLabel,Input,Select,Tabs,Tab,TabList} from '@chakra-ui/react'
-import { ChevronDownIcon,ExternalLinkIcon,LockIcon } from '@chakra-ui/icons'
+Stack,FormLabel,Input,InputGroup,InputLeftAddon,InputRightAddon,Select,Textarea,Tabs,Tab,TabList,TabPanel,TabPanels} from '@chakra-ui/react'
+import { AddIcon,UnlockIcon,TriangleDownIcon,ChevronDownIcon,ExternalLinkIcon,LockIcon } from '@chakra-ui/icons'
 import { useDisclosure } from '@chakra-ui/react'
-import React, { useReducer } from 'react'
-//AddIcon,UnlockIcon,TriangleDownIcon
-//InputGroup,InputLeftAddon,InputRightAddon,Textarea,TabPanel,TabPanels
-const Company=()=>{
+import React from 'react'
+const ContactPage=()=>{
 
     const { isOpen, onOpen, onClose } = useDisclosure()
     const firstField = React.useRef()
-     const [data,setdata]=useReducer()
+  
 
  return (
    <Box>
            <Box   display='flex' justifyContent='space-between' w='90%'  m='auto'>
                 <Box>
                     <Heading 
-                              as='h1' color='#0091ae' size='md'>Company
+                              as='h1' color='#0091ae' size='md'>Contacts
                                {/* <TriangleDownIcon  /> */}
                                </Heading>
     <Text>Records</Text>
@@ -64,14 +62,14 @@ const Company=()=>{
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader borderBottomWidth='1px' bg="#c4f1f9">
-          Create company
+          <DrawerHeader borderBottomWidth='1px'>
+            Create a new account
           </DrawerHeader>
 
           <DrawerBody>
             <Stack spacing='24px'>
               <Box>
-                <FormLabel htmlFor='username'>Company domain name</FormLabel>
+                <FormLabel htmlFor='username'>Email</FormLabel>
                 <Input
                   ref={firstField}
                   id='username'
@@ -79,7 +77,7 @@ const Company=()=>{
                 />
               </Box>
               <Box>
-                <FormLabel htmlFor='username'>Company name</FormLabel>
+                <FormLabel htmlFor='username'>First name</FormLabel>
                 <Input
                   ref={firstField}
                   id='username'
@@ -87,7 +85,7 @@ const Company=()=>{
                 />
               </Box>
               <Box>
-                <FormLabel htmlFor='username'>Company owner</FormLabel>
+                <FormLabel htmlFor='username'>Last name</FormLabel>
                 <Input
                   ref={firstField}
                   id='username'
@@ -95,31 +93,23 @@ const Company=()=>{
                 />
               </Box>
               <Box>
-                <FormLabel htmlFor='owner'>Industry</FormLabel>
-                <Select id='owner' >
-                <option value=''></option>
-                  <option value='Accounting'>Accounting</option>
-                  <option value='Airlines/Avigation'>Airlines/Avigation</option>
-                  <option value='Automation'>Automation</option>
-                  <option value='Banking'>Banking</option>
-                  <option value='Networking<'>Networking</option>
-                  <option value='wireless'>wireless</option>
-                  <option value='Other'>Other</option>
-                </Select>
+                <FormLabel htmlFor='username'>First name</FormLabel>
+                <Input
+                  ref={firstField}
+                  id='username'
+                 
+                />
               </Box>
               <Box>
-                <FormLabel htmlFor='owner'>Type</FormLabel>
-                <Select id='owner' >
-                <option value='Prospect'>Prospect</option>
-                  <option value='Patner'>Patner</option>
-                  <option value='Reseller'>Reseller</option>
-                  <option value='Vendor'>Vendor</option>
-                  <option value='Other'>Other</option>
+                <FormLabel htmlFor='owner'>Contact Owner</FormLabel>
+                <Select id='owner' defaultValue='segun'>
+                <option value='segun'></option>
+                  <option value='segun'>Segun Adebayo</option>
                   
                 </Select>
               </Box>
               <Box>
-                <FormLabel htmlFor='username'>City</FormLabel>
+                <FormLabel htmlFor='username'>Job title</FormLabel>
                 <Input
                   ref={firstField}
                   id='username'
@@ -127,7 +117,7 @@ const Company=()=>{
                 />
               </Box>
               <Box>
-                <FormLabel htmlFor='username'>State/Region</FormLabel>
+                <FormLabel htmlFor='username'>Phone number</FormLabel>
                 <Input
                   ref={firstField}
                   id='username'
@@ -135,55 +125,31 @@ const Company=()=>{
                 />
               </Box>
               <Box>
-                <FormLabel htmlFor='username'>Postal code</FormLabel>
-                <Input
-                  ref={firstField}
-                  id='username'
-                 
-                />
+                <FormLabel htmlFor='owner'>Lifecycle stage</FormLabel>
+                <Select id='owner' defaultValue='segun'>
+                <option value=''></option>
+                  <option value='segun'>Sales Qualified Lead</option>
+                  <option value='segun'>Customer</option>
+                  <option value='segun'>Lead</option>
+                  <option value='segun'>Subscriber</option>
+                  <option value='segun'>Marketing Qualified Lead</option>
+                  <option value='segun'>Evangelist</option>
+                  <option value='segun'>Other</option>
+                </Select>
               </Box>
               <Box>
-                <FormLabel htmlFor='username'>Number of employees</FormLabel>
-                <Input
-                  ref={firstField}
-                  id='username'
-                 
-                />
+                <FormLabel htmlFor='owner'>Lead status</FormLabel>
+                <Select id='owner' defaultValue='segun'>
+                <option value=''></option>
+                  <option value='segun'>New</option>
+                  <option value='segun'>Open</option>
+                  <option value='segun'>In progress</option>
+                  <option value='segun'>open deal</option>
+                  <option value='segun'>unqualified</option>
+                  <option value='segun'>Connected</option>
+                  <option value='segun'>Bad timing</option>
+                </Select>
               </Box>
-              <Box>
-                <FormLabel htmlFor='username'>Anuall reveneu</FormLabel>
-                <Input
-                  ref={firstField}
-                  id='username'
-                 
-                />
-              </Box>
-              <Box>
-                <FormLabel htmlFor='username'>Timezone</FormLabel>
-                <Input
-                  ref={firstField}
-                  id='username'
-                 
-                />
-              </Box>
-              <Box>
-                <FormLabel htmlFor='username'>Description</FormLabel>
-                <Input
-                  ref={firstField}
-                  id='username'
-                 
-                />
-              </Box>
-              <Box>
-                <FormLabel htmlFor='username'>Linkedln company page</FormLabel>
-                <Input
-                  ref={firstField}
-                  id='username'
-                 
-                />
-              </Box>
-            
-             
               {/* <Box>
                 <FormLabel htmlFor='url'>Url</FormLabel>
                 <InputGroup>
@@ -215,7 +181,7 @@ const Company=()=>{
           <DrawerFooter justifyContent='space-around' borderTopWidth='1px'>
            
             <Button border='1px solid #ff7a59' borderRadius='0' color='white' _hover='#ff7a59' bg='#ff7a59'>Create</Button>
-            <Button border='1px solid #ff7a59' borderRadius='0' variant='outline' mr={3}bg='#ff7a59' color="white" onClick={onClose}>
+            <Button border='1px solid #ff7a59' borderRadius='0' variant='outline' mr={3} onClick={onClose}>
               Cancel
             </Button>
           </DrawerFooter>
@@ -229,11 +195,11 @@ const Company=()=>{
            <Box  w='90%' m='auto' >
            <Tabs mt='20px' isFitted variant='enclosed'>
                   <TabList   gap='1' mb='1em'>
-                    <Tab  bg='#C4F1F9' _selected={{ color: 'black', bg: 'white' }}>All company</Tab>
-                    <Tab bg='#C4F1F9' _selected={{ color: 'black', bg: 'white' }}>My company</Tab>
-                    <Tab bg='#C4F1F9' _selected={{ color: 'black', bg: 'white' }}>Marketing company</Tab>
-                    <Tab bg='#C4F1F9' _selected={{ color: 'black', bg: 'white' }}>My company</Tab>
-                    <Tab bg='#C4F1F9' _selected={{ color: 'black', bg: 'white' }}>Unassigned company</Tab>
+                    <Tab  bg='#C4F1F9' _selected={{ color: 'black', bg: 'white' }}>All contacts</Tab>
+                    <Tab bg='#C4F1F9' _selected={{ color: 'black', bg: 'white' }}>My contacts</Tab>
+                    <Tab bg='#C4F1F9' _selected={{ color: 'black', bg: 'white' }}>Marketing contacts</Tab>
+                    <Tab bg='#C4F1F9' _selected={{ color: 'black', bg: 'white' }}>My uncontacted</Tab>
+                    <Tab bg='#C4F1F9' _selected={{ color: 'black', bg: 'white' }}>Unassigned contacts</Tab>
                     <Tab bg='#C4F1F9' _selected={{ color: 'black', bg: 'white' }}>Needs next action</Tab>
                   </TabList>
                   {/* <TabPanels>
@@ -253,7 +219,7 @@ const Company=()=>{
   
  )
 }
-export default Company
+export  {ContactPage}
 
 // #7fd1de
 //hover #007a8c

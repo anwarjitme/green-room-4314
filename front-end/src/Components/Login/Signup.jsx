@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Button,
@@ -12,10 +12,52 @@ import {
   Input,
   Select,
   Text,
+  useToast,
   VStack,
 } from "@chakra-ui/react";
- import { FcGoogle } from "react-icons/fc";
+import { FcGoogle } from "react-icons/fc";
+import { useDispatch, useSelector } from "react-redux";
+import { userSignup } from "../../Redux/UserSignup/userSignup.action";
+import { Navigate } from "react-router-dom";
+
 const Signup = () => {
+  const [signup, setSignup] = useState({});
+  const { isAuth, isError } = useSelector((store) => store.signup);
+  const toast = useToast();
+  const dispatch = useDispatch();
+
+  const hanldeChange = (e) => {
+    const { name, value } = e.target;
+    setSignup({ ...signup, [name]: value });
+  };
+
+  if (isAuth) {
+    toast({
+      title: "Success",
+      description: "Sign Up",
+      status: "success",
+      duration: 2000,
+      position: "top",
+      isClosable: true,
+    });
+    return <Navigate to="/login" />;
+  }
+
+  const handelSubmit = (e) => {
+    e.preventDefault();
+    dispatch(userSignup(signup));
+    if (isError) {
+      toast({
+        title: "Something Went Wrong ",
+        description: "please Fill all details",
+        status: "error",
+        duration: 2000,
+        position: "top",
+        isClosable: true,
+      });
+    }
+  };
+
   return (
     <div>
       <Flex justify={"space-evenly"} gap={"60px"}>
@@ -26,7 +68,10 @@ const Signup = () => {
               <Text>Sign in with Google</Text>
             </Center>
           </Button>
-          <form style={{ fontSize: "25px", marginBottom: "50px" }}>
+          <form
+            style={{ fontSize: "25px", marginBottom: "50px" }}
+            onSubmit={handelSubmit}
+          >
             <VStack spacing={"6"}>
               <HStack spacing={"24"}>
                 <Box width={"50%"}>
@@ -36,7 +81,7 @@ const Signup = () => {
                       name="first_name"
                       variant={"flushed"}
                       borderBlockEnd={"2px solid #00A4BD"}
-                      // onChange={hanldeChange}
+                      onChange={hanldeChange}
                       placeholder={"First Name"}
                     />
                   </FormControl>
@@ -48,7 +93,7 @@ const Signup = () => {
                       borderBlockEnd={"2px solid #00A4BD"}
                       name="last_name"
                       variant={"flushed"}
-                      // onChange={hanldeChange}
+                      onChange={hanldeChange}
                       placeholder={"Last Name"}
                     />
                   </FormControl>
@@ -60,7 +105,7 @@ const Signup = () => {
                   borderBlockEnd={"2px solid #00A4BD"}
                   name="email"
                   variant={"flushed"}
-                  // onChange={hanldeChange}
+                  onChange={hanldeChange}
                   placeholder={"Email"}
                 />
               </FormControl>
@@ -70,7 +115,7 @@ const Signup = () => {
                   borderBlockEnd={"2px solid #00A4BD"}
                   name="phone_number"
                   variant={"flushed"}
-                  // onChange={hanldeChange}
+                  onChange={hanldeChange}
                   placeholder={"Phone Number"}
                 />
               </FormControl>
@@ -80,7 +125,7 @@ const Signup = () => {
                   borderBlockEnd={"2px solid #00A4BD"}
                   name="password"
                   variant={"flushed"}
-                  // onChange={hanldeChange}
+                  onChange={hanldeChange}
                   placeholder={"Password"}
                 />
               </FormControl>
@@ -90,17 +135,17 @@ const Signup = () => {
                   borderBlockEnd={"2px solid #00A4BD"}
                   name="company_name"
                   variant={"flushed"}
-                  // onChange={hanldeChange}
+                  onChange={hanldeChange}
                   placeholder={"Company Name"}
                 />
               </FormControl>
               <FormControl isRequired>
                 <Input
-                  type="url"
+                  type="text"
                   borderBlockEnd={"2px solid #00A4BD"}
                   name="website_URL"
                   variant={"flushed"}
-                  // onChange={hanldeChange}
+                  onChange={hanldeChange}
                   placeholder={"Website URL"}
                 />
               </FormControl>
@@ -110,6 +155,7 @@ const Signup = () => {
                   variant={"flushed"}
                   borderBlockEnd={"2px solid #00A4BD"}
                   name="employees"
+                  onChange={hanldeChange}
                 >
                   <option value="1">1</option>
                   <option value="2_to_5">2 to 5</option>
@@ -141,7 +187,7 @@ const Signup = () => {
                 }}
                 type={"submit"}
               >
-                Submit
+                Sign Up
               </Button>
             </VStack>
           </form>

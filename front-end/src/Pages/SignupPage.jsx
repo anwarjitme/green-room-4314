@@ -14,7 +14,10 @@ const SignupPage = () => {
           />
           <Text fontSize={"16px"}>
             Have an account?{" "}
-            <Link style={{ color: "#527a8c", fontWeight: "bold" }}>
+            <Link
+              style={{ color: "#527a8c", fontWeight: "bold" }}
+              to={"/login"}
+            >
               Sign in.
             </Link>
           </Text>
