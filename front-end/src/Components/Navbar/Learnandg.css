@@ -1,0 +1,13 @@
+.Learngrowcss{
+    background-color:#25BAA3 ;
+}
+
+#learnh1{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+
+    padding-top:10%;
+    color: white;
+    font-size: 30px;
+}

@@ -15,11 +15,11 @@ import {
   useToast,
   VStack,
 } from "@chakra-ui/react";
-
 import { FcGoogle } from "react-icons/fc";
 import { useDispatch, useSelector } from "react-redux";
 import { userSignup } from "../../Redux/UserSignup/userSignup.action";
 import { Navigate } from "react-router-dom";
+
 const Signup = () => {
   const [signup, setSignup] = useState({});
   const { isAuth, isError } = useSelector((store) => store.signup);
@@ -63,7 +63,7 @@ const Signup = () => {
       <Flex justify={"space-evenly"} gap={"60px"}>
         <VStack spacing={"10"} width={"35%"}>
           <Heading color={"blackAlpha.700"}>Create your free account</Heading>
-          <Button w={"full"} colorScheme={"blue"} >
+          <Button w={"full"} colorScheme={"blue"} leftIcon={FcGoogle}>
             <Center>
               <Text>Sign in with Google</Text>
             </Center>
