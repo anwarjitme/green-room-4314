@@ -5,5 +5,29 @@
       "title": "json-server",
       "author": "typicode"
     }
+  ],
+ 
+  "Contacts":[
+    {
+      "name":"Maria Johnson(Sample Contact)",
+      "email":"emailmaria@hubspot.com",
+      "phonenumber":"9999999999",
+      "contactowner":"Unassigned",
+      "primarycompany":"Hubspot, Inc.",
+      "lastactivity":"",
+      "leadstatus":"",
+      "createdate":"Yesterday at 4:51 PM"
+    },
+    {
+      "name":"Brian Halligan(Sample Contact)",
+      "email":"bh@hubspot.com",
+      "phonenumber":"9999999999",
+      "contactowner":"Unassigned",
+      "primarycompany":"Hubspot, Inc.",
+      "lastactivity":"",
+      "leadstatus":"",
+      "createdate":"Yesterday at 4:51 PM"
+    }
   ]
+
 }
