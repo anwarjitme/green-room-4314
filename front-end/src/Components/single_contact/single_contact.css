@@ -7,13 +7,14 @@
 /* <-----LEFT PART-----> */
 
 .left {
+  display: flex;
+  overflow: scroll;
+  flex-direction: column;
   height: 100vh;
-  overflow-y: scroll;
-  width: 30%;
+  width: 35%;
   border: 1px solid rgb(90, 89, 89);
   margin: auto;
 }
-
 .header {
   padding: 20px 0px 20px 0px;
   display: flex;
@@ -24,7 +25,6 @@
   width: 90%;
   height: 60px;
   margin: auto;
-  /* margin: 20px 0px 20px 0px; */
   border: 1px solid #7fd1de;
   align-items: center;
 }
@@ -78,8 +78,7 @@
 }
 /* <------MIDDLE PART------> */
 .middle {
-  width: 40%;
-  /* border: 1px solid rgb(90, 89, 89); */
+  width: 50%;
   background-color: #f5f8fa;
   height: 100vh;
 }
@@ -88,4 +87,12 @@
 .right {
   width: 30%;
   border: 1px solid rgb(90, 89, 89);
+}
+.activity-headeer{
+  display: flex;
+align-items: flex-start;
+}
+.activity-headeer>button{
+  display: block;
+  padding: 100px;
 }

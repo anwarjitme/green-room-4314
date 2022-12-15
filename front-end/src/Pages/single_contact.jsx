@@ -19,15 +19,16 @@ import {
   MenuItem,
   MenuList,
   Tooltip,
-  Fade,
-  ScaleFade,
-  Slide,
-  SlideFade,
-  Divider,
+ 
+  MenuDivider,
+  StackDivider,
 } from "@chakra-ui/react";
-import { Website_activity } from "../Components/single_contact/Collapse_activity";
-import { Collapse_about } from "../Components/single_contact/collaps1";
-import { Collapse_communication } from "../Components/single_contact/Collapse_2";
+import {
+  Website_activity,
+  Collapse_about,
+  Collapse_communication,
+} from "../Components/single_contact/collaps1";
+import { Divider } from "@chakra-ui/react";
 const Single_contact = () => {
   return (
     <div className="container">
@@ -120,7 +121,14 @@ const Single_contact = () => {
         <Website_activity />
         <Divider orientation="horizontal" />
       </div>
-      <div className="middle"></div>
+      <div className="middle">
+        <div className="activity-header">
+          <button className="activity-btn" variant="link">
+            Activities
+          </button>
+        </div>
+        <Divider />
+      </div>
       <div className="right"></div>
     </div>
   );
