@@ -3,7 +3,17 @@ const User = require("./user.model");
 const Router = express.Router();
 
 Router.post("/signup", async (req, res) => {
-  const { email, password, first_name, last_name, avtar } = req.body;
+  const {
+    email,
+    password,
+    first_name,
+    last_name,
+    phone_number,
+    company_name,
+    website_URL,
+    employees,
+    avtar,
+  } = req.body;
   try {
     let existingUser = await User.findOne({ email });
     if (existingUser) {
@@ -14,6 +24,10 @@ Router.post("/signup", async (req, res) => {
         password,
         first_name,
         last_name,
+        phone_number,
+        company_name,
+        website_URL,
+        employees,
         avtar,
       });
       if (user) {
