@@ -14,9 +14,9 @@ root.render(
     <ChakraProvider>
       <Provider store={store}>
         <App />
-       </Provider> 
+      </Provider>
     </ChakraProvider>
-   </BrowserRouter> 
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

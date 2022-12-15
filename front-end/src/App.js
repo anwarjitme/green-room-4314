@@ -10,8 +10,6 @@ function App() {
   return (
     <div className="App">
       <AllRoute />
-      <Home_navbar/>
-    
     </div>
   );
 }
