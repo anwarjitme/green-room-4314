@@ -4,7 +4,7 @@ const mainUrl = process.env.REACT_APP_MAIN_URL;
 
 export const userSignup = (cred) => async (dispatch) => {
   try {
-    let res = await axios.post(`http://localhost:8080/users/signup`, cred);
+    let res = await axios.post(`http://localhost:5000/users/signup`, cred);
     console.log(res.data);
     dispatch({ type: USER_SIGNUP });
   } catch (error) {
