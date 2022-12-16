@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import Company from "./Company";
 import RequireAuth from "../Components/hoc/RequireAuth";
 import DeashboardPage from "./DeashboardPage";
 import { ContactHome } from "./ContactHome";
@@ -15,6 +16,7 @@ const AllRoute = () => {
        <Route  path="/" element={<Hnavbar/>}></Route>
       <Route path="/signup" element={<SignupPage />}></Route>
       <Route path="/login" element={<LoginPage />}></Route>
+      <Route path="/dashboard/company" element={<Company />}></Route>
       <Route
         path="/dashboard"
         element={
@@ -28,5 +30,4 @@ const AllRoute = () => {
     </Routes>
   );
 };
-
 export default AllRoute;
