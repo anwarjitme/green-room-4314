@@ -1,18 +1,20 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { getContact } from "../../Redux/contact/action"
+import {getContact} from '../../Redux/Contact/action'
 import {Box} from '@chakra-ui/react'
+
 const ContactItem=()=>{
 
     const dispatch=useDispatch()
 
-    const contact=useSelector(store=>store.contacts)
-
+    const contacts=useSelector((store)=>store.contact.contacts)
+    
+      
     useEffect(()=>{
-      dispatch(getContact)
+      dispatch(getContact())
     },[])
-
-console.log('cc',contact)
+    console.log('item',contacts)
+//console.log('cc',contact)
     return (
         <Box>
 cccccc
@@ -20,4 +22,5 @@ cccccc
     )
 }
 
-export default ContactItem
+export {ContactItem}
+

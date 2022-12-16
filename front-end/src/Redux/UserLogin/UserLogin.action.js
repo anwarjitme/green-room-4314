@@ -3,7 +3,7 @@ import { USER_LOGIN, USER_LOGIN_ERROR, USER_LOGOUT } from "./UserLogin.type";
 
 export const userLogin = (cred) => async (dispatch) => {
   try {
-    let res = await axios.post("http://localhost:8080/users/login", cred);
+    let res = await axios.post("http://localhost:5000/users/login", cred);
     dispatch({ type: USER_LOGIN, payload: res.data });
     console.log(res.data);
   } catch (error) {

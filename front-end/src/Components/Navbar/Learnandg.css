@@ -1,5 +1,6 @@
 .Learngrowcss{
     background-color:#25BAA3 ;
+    height: 95 0px;
 }
 
 #learnh1{
@@ -9,5 +10,176 @@
 
     padding-top:10%;
     color: white;
+    font-size: 34px;
+    font-weight: 650;
+}
+
+#learnpara1{
+    width: 59%;
+    margin: auto;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+
+    margin-top: 20px;
+}
+
+.learnboxcssout{
+    width: 80%;
+    margin: auto;
+ display: grid;
+ grid-template-columns: repeat(4,1fr);
+ grid-template-rows: repeat(2,200px);
+
+
+ margin-top: 30px;
+}
+
+.learnboxcss{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  
+    border: 1px solid white;
+    text-align: center;
+    align-items: center;
+    color: white;
+    padding: 10px 0px;
+    align-content: center;
+   
+    
+}
+#tex1h1{
     font-size: 30px;
+   font-weight: bold;
+   margin-top: 20px;
+}
+#tex1h2{
+    
+    font-size: 20px;
+   font-weight: 700px;
+}
+
+.learnboxcss>img{
+ 
+  height: 40px;
+}
+
+.lastdiv{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 10% 0px;
+    column-gap: 30px;
+}
+
+.lasdh1{
+    width: 31%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    color:#2E475D ;
+}
+.lasdh1>h1{
+    color:#2E475D ;
+    font-size: 35px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.lasdh1>p{
+    color:#2E475D ;
+    font-size: 18px;
+    line-height: 35px;
+   
+}
+.twologo{
+    justify-content: space-evenly;
+    display: flex;
+    width: 70%;
+}
+.twologodiv{
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+   
+}
+.leastpartdiv{
+    display: flex;
+     column-gap: 80px;
+     padding: 50px 0px;
+
+   
+    
+}
+
+.leastparth1{
+    width: 60%;
+    text-align: left;
+    padding-left: 100px;
+    margin-top: 50px;
+
+}
+
+#headinglast1{
+    font-size: 25px;
+    color:#2E475D ;
+    font-weight:bold;
+   
+}
+#lastdivp1{
+    font-size: 18px;
+    color:#2E475D ;
+    margin-top: 20px;
+    font-weight: 350;
+    line-height: 33px;
+}
+.lastdivbtn{
+    display: flex;
+    column-gap: 20px;
+}
+
+
+.lastsecbtn{
+   
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+.lastsecbtn>button{
+    width: 220px;
+    height: 70px;
+    background-color: #FF5C35;
+   color: white;
+   padding: 16px 25px;
+    font-weight: 650;
+   border-radius: 5px;
+   
+   
+  
+
+}
+
+#lbtn1:hover{
+    background-color: #FFCEC2;
+}
+
+#lbtn2:hover{
+    background-color: #FFCEC2;
+}
+
+#lbtn2{
+    background-color:white;
+    color: #FF5C35;
+    border: 1px solid   #FF5C35;
+}
+#lastparp2{
+    font-size: 14px;
+    color:#2E475D ;
+    margin-top: 20px;
+
+    margin-bottom: 60px;
+   
 }
