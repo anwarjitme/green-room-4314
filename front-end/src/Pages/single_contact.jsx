@@ -11,6 +11,7 @@ import {
   TimeIcon,
   DragHandleIcon,
   CopyIcon,
+  Search2Icon,
 } from "@chakra-ui/icons";
 import {
   Button,
@@ -22,6 +23,18 @@ import {
  
   MenuDivider,
   StackDivider,
+  Tabs,
+  TabList,
+  Tab,
+  TabPanels,
+  TabPanel,
+  Flex,
+  InputGroup,
+  Input,
+  InputRightAddon,
+ 
+  
+  
 } from "@chakra-ui/react";
 import {
   Website_activity,
@@ -29,7 +42,11 @@ import {
   Collapse_communication,
 } from "../Components/single_contact/collaps1";
 import { Divider } from "@chakra-ui/react";
+// import Drawer_Right from "../Components/single_contact/Drower_right"
+import  { Company,Deals,Tickets } from "../Components/single_contact/collapce_right"
+
 const Single_contact = () => {
+
   return (
     <div className="container">
       <div className="left">
@@ -122,16 +139,71 @@ const Single_contact = () => {
         <Divider orientation="horizontal" />
       </div>
       <div className="middle">
-        <div className="activity-header">
-          <button className="activity-btn" variant="link">
-            Activities
-          </button>
-        </div>
+        <Tabs maxW="95%" m="auto" pt="5" variant="enclosed">
+          <TabList>
+            <Tab bg="#eaf0f6">Activities</Tab>
+            <Tab>Overview</Tab>
+          </TabList>
+          <TabPanels>
+            <TabPanel>
+              <Flex justifyContent="space-between">
+                <InputGroup py={3} maxW="45%" size="sm">
+                  <Input bg="white" py={5} placeholder="Search activities" />
+                  <InputRightAddon py={5} children={<Search2Icon />} />
+                </InputGroup>
+                <Menu>
+                  <MenuButton
+                    mt={3}
+                    as={Button}
+                    rightIcon={<ChevronDownIcon />}
+                  >
+                    Collapse all
+                  </MenuButton>
+                  <MenuList>
+                    <MenuItem>Collapse all</MenuItem>
+                    <MenuItem>Expand all</MenuItem>
+                  </MenuList>
+                </Menu>
+              </Flex>
+              <Tabs>
+                <TabList>
+                  <Tab>Activity</Tab>
+                  <Tab>Notes</Tab>
+                  <Tab>Emails</Tab>
+                  <Tab>Calls</Tab>
+                  <Tab>Tasks</Tab>
+                  <Tab>Meeting</Tab>
+                </TabList>
+
+                <TabPanels>
+                  <TabPanel>
+                    <p>one!</p>
+                  </TabPanel>
+                  <TabPanel>
+                    <p>two!</p>
+                  </TabPanel>
+                  <TabPanel>
+                    <p>three!</p>
+                  </TabPanel>
+                </TabPanels>
+              </Tabs>
+            </TabPanel>
+            <TabPanel>
+              <p>two!</p>
+            </TabPanel>
+          </TabPanels>
+        </Tabs>
         <Divider />
       </div>
-      <div className="right"></div>
+      <div className="right">
+    <Company/>
+    <Deals/>
+    <Tickets/>
+      </div>
+
     </div>
   );
 };
 
 export default Single_contact;
+
