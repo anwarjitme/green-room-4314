@@ -13,8 +13,8 @@ import {
   useToast,
   VStack,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { BsFillEyeSlashFill, BsFillEyeFill } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { userLogin } from "../../Redux/UserLogin/UserLogin.action";
@@ -26,21 +26,30 @@ const Login = () => {
   const toast = useToast();
   const { isAuth, isError } = useSelector((store) => store.login);
   const dispatch = useDispatch();
+  const { state } = useLocation();
+  const naviget = useNavigate();
 
   const hendelSubmin = (e) => {
     e.preventDefault();
     dispatch(userLogin({ email: email, password: password }));
-    if (isAuth) {
-      toast({
-        title: "Success",
-        description: "Log In",
-        status: "success",
-        duration: 2000,
-        position: "top",
-        isClosable: true,
-      });
-    }
   };
+  useEffect(() => {
+    if (isAuth) {
+      if (state) {
+        naviget(state.form, { replace: true });
+      } else {
+        naviget("/dashboard");
+        toast({
+          title: "Success",
+          description: "Welcome To The Admin Dashboard",
+          status: "success",
+          duration: 2000,
+          position: "top",
+          isClosable: true,
+        });
+      }
+    }
+  }, [isAuth]);
   if (isError) {
     toast({
       title: "Something Went Wrong ",
@@ -105,6 +114,7 @@ const Login = () => {
                 </InputRightElement>
               </InputGroup>
             </FormControl>
+
             <Button
               w={"100%"}
               disabled={email === "" || password === ""}
