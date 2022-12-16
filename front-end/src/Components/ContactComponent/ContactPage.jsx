@@ -9,13 +9,48 @@ Stack,FormLabel,Input,InputGroup,InputLeftAddon,InputRightAddon,Select,Textarea,
 import { AddIcon,UnlockIcon,TriangleDownIcon,ChevronDownIcon,ExternalLinkIcon,LockIcon } from '@chakra-ui/icons'
 import { useDisclosure } from '@chakra-ui/react'
 import React from 'react'
+import {ContactItem} from './ContactItem'
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { postcontact } from '../../Redux/Contact/action'
 const ContactPage=()=>{
 
     const { isOpen, onOpen, onClose } = useDisclosure()
     const firstField = React.useRef()
-  
+     const [email,setEmail]=useState("")
+     const [firstName,setfirstName]=useState("")
+     const [lastName,setlastName]=useState("")
+     const [jobTitle,setjobTitle]=useState("")
+     const [phone,setPhone]=useState("")
+     const [Lifecycle,setLifecycle]=useState()
+     const [LeadStatus,setLeadStatus]=useState()
+     const [contactowner,setcontactowner]=useState("")
+   
+      const dispatch=useDispatch()
+    
+     const handleAdd=()=>{
+       dispatch(postcontact(email,firstName,lastName,jobTitle,phone,Lifecycle,LeadStatus,contactowner))
+      //  .then((r)=>{
+      //    dispatch(postcontact())
+      //  })
+     }
 
- return (
+console.log('postReq',postcontact)
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+return (
    <Box>
            <Box   display='flex' justifyContent='space-between' w='90%'  m='auto'>
                 <Box>
@@ -72,15 +107,16 @@ const ContactPage=()=>{
                 <FormLabel htmlFor='username'>Email</FormLabel>
                 <Input
                   ref={firstField}
-                  id='username'
-                 
+                 value={email}
+                 onChange={(e)=>setEmail(e.target.value)}
                 />
               </Box>
               <Box>
                 <FormLabel htmlFor='username'>First name</FormLabel>
                 <Input
                   ref={firstField}
-                  id='username'
+                  value={firstName}
+                  onChange={(e)=>setfirstName(e.target.value)}
                  
                 />
               </Box>
@@ -88,23 +124,17 @@ const ContactPage=()=>{
                 <FormLabel htmlFor='username'>Last name</FormLabel>
                 <Input
                   ref={firstField}
-                  id='username'
+                 value={lastName}
+                 onChange={(e)=>setlastName(e.target.value)}
                  
                 />
               </Box>
-              <Box>
-                <FormLabel htmlFor='username'>First name</FormLabel>
-                <Input
-                  ref={firstField}
-                  id='username'
-                 
-                />
-              </Box>
+             
               <Box>
                 <FormLabel htmlFor='owner'>Contact Owner</FormLabel>
-                <Select id='owner' defaultValue='segun'>
-                <option value='segun'></option>
-                  <option value='segun'>Segun Adebayo</option>
+                <Select  onChange={(e)=>setcontactowner(e.target.value)} id='owner' defaultValue='segun'>
+                <option value=''></option>
+                  <option >Segun Adebayo</option>
                   
                 </Select>
               </Box>
@@ -112,7 +142,8 @@ const ContactPage=()=>{
                 <FormLabel htmlFor='username'>Job title</FormLabel>
                 <Input
                   ref={firstField}
-                  id='username'
+                  value={jobTitle}
+                  onChange={(e)=>setjobTitle(e.target.value)}
                  
                 />
               </Box>
@@ -120,34 +151,35 @@ const ContactPage=()=>{
                 <FormLabel htmlFor='username'>Phone number</FormLabel>
                 <Input
                   ref={firstField}
-                  id='username'
+                 value={phone}
+                 onChange={(e)=>setPhone(e.target.value)}
                  
                 />
               </Box>
               <Box>
                 <FormLabel htmlFor='owner'>Lifecycle stage</FormLabel>
-                <Select id='owner' defaultValue='segun'>
+                <Select  onChange={(e)=>setLifecycle(e.target.value)} id='owner' defaultValue='segun'>
                 <option value=''></option>
-                  <option value='segun'>Sales Qualified Lead</option>
-                  <option value='segun'>Customer</option>
-                  <option value='segun'>Lead</option>
-                  <option value='segun'>Subscriber</option>
-                  <option value='segun'>Marketing Qualified Lead</option>
-                  <option value='segun'>Evangelist</option>
-                  <option value='segun'>Other</option>
+                  <option >Sales Qualified Lead</option>
+                  <option >Customer</option>
+                  <option >Lead</option>
+                  <option >Subscriber</option>
+                  <option >Marketing Qualified Lead</option>
+                  <option >Evangelist</option>
+                  <option >Other</option>
                 </Select>
               </Box>
               <Box>
                 <FormLabel htmlFor='owner'>Lead status</FormLabel>
-                <Select id='owner' defaultValue='segun'>
+                <Select  onChange={(e)=>setLeadStatus(e.target.value)} id='owner' defaultValue='segun'>
                 <option value=''></option>
-                  <option value='segun'>New</option>
-                  <option value='segun'>Open</option>
-                  <option value='segun'>In progress</option>
-                  <option value='segun'>open deal</option>
-                  <option value='segun'>unqualified</option>
-                  <option value='segun'>Connected</option>
-                  <option value='segun'>Bad timing</option>
+                  <option >New</option>
+                  <option >Open</option>
+                  <option >In progress</option>
+                  <option >open deal</option>
+                  <option >unqualified</option>
+                  <option >Connected</option>
+                  <option >Bad timing</option>
                 </Select>
               </Box>
               {/* <Box>
@@ -180,7 +212,7 @@ const ContactPage=()=>{
 
           <DrawerFooter justifyContent='space-around' borderTopWidth='1px'>
            
-            <Button border='1px solid #ff7a59' borderRadius='0' color='white' _hover='#ff7a59' bg='#ff7a59'>Create</Button>
+            <Button border='1px solid #ff7a59' borderRadius='0' color='white' _hover='#ff7a59' bg='#ff7a59' onClick={handleAdd}>Create</Button>
             <Button border='1px solid #ff7a59' borderRadius='0' variant='outline' mr={3} onClick={onClose}>
               Cancel
             </Button>
@@ -213,7 +245,9 @@ const ContactPage=()=>{
                 </Tabs>
 
            </Box>
-
+     <Box>
+           <ContactItem />
+     </Box>
 
            </Box>
   
