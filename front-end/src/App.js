@@ -3,6 +3,7 @@ import ContactItem from './Components/ContactComponent/ContactItem';
 import { ContactPage } from './Components/ContactComponent/ContactPage';
 import { Navbar } from './Components/ContactComponent/Navbar';
 
+
 import AllRoute from "./Pages/AllRoute";
 
 function App() {
