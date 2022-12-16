@@ -2,32 +2,57 @@
   "company": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
- 
-  "Contacts":[
-    {
-      "name":"Maria Johnson(Sample Contact)",
-      "email":"emailmaria@hubspot.com",
-      "phonenumber":"9999999999",
-      "contactowner":"Unassigned",
-      "primarycompany":"Hubspot, Inc.",
-      "lastactivity":"",
-      "leadstatus":"",
-      "createdate":"Yesterday at 4:51 PM"
+      "Companydomainname": "gg",
+      "Companyname": "gg",
+      "Companyowner": "gg",
+      "Industry": "gg",
+      "Type": "gg",
+      "City": "gg",
+      "StateRegion": "gg",
+      "Postalcode": "ggff",
+      "Numberofemployees": "fff",
+      "Timezone": "fff",
+      "Description": "fff",
+      "Linkedlncompanypage": "gggg",
+      "Anuallreveneu": "hh"
     },
     {
-      "name":"Brian Halligan(Sample Contact)",
-      "email":"bh@hubspot.com",
-      "phonenumber":"9999999999",
-      "contactowner":"Unassigned",
-      "primarycompany":"Hubspot, Inc.",
-      "lastactivity":"",
-      "leadstatus":"",
-      "createdate":"Yesterday at 4:51 PM"
+      "Companydomainname": "",
+      "Companyname": "",
+      "Companyowner": "",
+      "Industry": "",
+      "Type": "",
+      "City": "",
+      "StateRegion": "",
+      "Postalcode": "ggg",
+      "Numberofemployees": "",
+      "Timezone": "",
+      "Description": "",
+      "Linkedlncompanypage": "",
+      "Anuallreveneu": "",
+      "id": 2
+    }
+  ],
+  "Contacts": [
+    {
+      "name": "Maria Johnson(Sample Contact)",
+      "email": "emailmaria@hubspot.com",
+      "phonenumber": "9999999999",
+      "contactowner": "Unassigned",
+      "primarycompany": "Hubspot, Inc.",
+      "lastactivity": "",
+      "leadstatus": "",
+      "createdate": "Yesterday at 4:51 PM"
+    },
+    {
+      "name": "Brian Halligan(Sample Contact)",
+      "email": "bh@hubspot.com",
+      "phonenumber": "9999999999",
+      "contactowner": "Unassigned",
+      "primarycompany": "Hubspot, Inc.",
+      "lastactivity": "",
+      "leadstatus": "",
+      "createdate": "Yesterday at 4:51 PM"
     }
   ]
-
 }
