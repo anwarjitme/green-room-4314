@@ -6,7 +6,7 @@ const initialState={
     isError:false
 }
 
-const reducer=(state=initialState,action)=>{
+const Contactreducer=(state=initialState,action)=>{
     const {type,payload}=action
    
     switch(type){
@@ -25,9 +25,19 @@ const reducer=(state=initialState,action)=>{
                 ...state,isLoading:true,isError:false,contacts:payload
             }
         }
+
+        case types.POST_CONTACT_SUCCESS:{
+            const newContact=[...state.contacts,payload]
+            return {
+                 ...state,contacts:newContact
+            }
+        }
+
+        default :
+            return state
     }
 }
 
 
 
-export {reducer}
+export {Contactreducer}

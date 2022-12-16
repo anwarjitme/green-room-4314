@@ -1,8 +1,16 @@
+/* *{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+} */
+
 .container {
   width: 100%;
-  display: flex;
-  margin: auto;
+  display: grid;
+  grid-template-columns: 28% 48% 27%;
+
   height: 100vh;
+  /* border: 1px solid rgb(90, 89, 89); */
 }
 /* <-----LEFT PART-----> */
 
@@ -10,10 +18,9 @@
   display: flex;
   overflow: scroll;
   flex-direction: column;
-  height: 100vh;
-  width: 35%;
-  border: 1px solid rgb(90, 89, 89);
-  margin: auto;
+  height: 100%;
+
+  /* border: 1px solid rgb(90, 89, 89); */
 }
 .header {
   padding: 20px 0px 20px 0px;
@@ -78,21 +85,24 @@
 }
 /* <------MIDDLE PART------> */
 .middle {
-  width: 50%;
+  /* width:50%; */
   background-color: #f5f8fa;
-  height: 100vh;
+  height: 100%;
 }
 
 /* <-----RIGHT PART------> */
 .right {
-  width: 30%;
-  border: 1px solid rgb(90, 89, 89);
-}
-.activity-headeer{
   display: flex;
-align-items: flex-start;
+  flex-direction: column;
+  overflow: scroll;
+
+  /* border: 1px solid rgb(90, 89, 89); */
 }
-.activity-headeer>button{
+.activity-headeer {
+  display: flex;
+  align-items: flex-start;
+}
+.activity-headeer > button {
   display: block;
   padding: 100px;
 }
