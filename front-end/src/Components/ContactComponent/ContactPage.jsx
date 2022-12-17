@@ -50,20 +50,6 @@ const ContactPage=()=>{
        })
        
      }
-
-
-
-
-console.log('contacts',contacts)
-
-
-
-
-
-
-
-
-
 return (
    <Box>
            <Box   display='flex' justifyContent='space-between' w='90%'  m='auto'>
@@ -245,6 +231,5 @@ return (
  )
 }
 export  {ContactPage}
-
 // #7fd1de
 //hover #007a8c

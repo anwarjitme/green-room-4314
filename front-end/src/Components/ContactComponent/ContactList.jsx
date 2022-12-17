@@ -1,12 +1,5 @@
 import {Box,Tr,Td,Input, Heading,Checkbox} from '@chakra-ui/react'
-
-
-
-
 const ContactList=({name,email,phonenumber,contactowner,leadstatus,createdate})=>{
-
-
-
     return (
         <>
         <Tr>
@@ -26,6 +19,5 @@ const ContactList=({name,email,phonenumber,contactowner,leadstatus,createdate})=
         </>
     )
 }
-
-
 export {ContactList}
+
