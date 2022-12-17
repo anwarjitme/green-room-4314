@@ -17,16 +17,14 @@ import {
 import { ContactList } from "./ContactList";
 import { Search2Icon } from "@chakra-ui/icons";
 
+
 const ContactItem = () => {
   const dispatch = useDispatch();
-
   const contacts = useSelector((store) => store.contact.contacts);
-
-  useEffect(() => {
-    dispatch(getContact());
-  }, []);
-  console.log("item", contacts);
-
+    useEffect(()=>{
+      dispatch(getContact())
+    },[])
+    console.log('item',contacts)
   return (
     <Box m="auto" w="90%">
       <Box bg="#C4F1F9">

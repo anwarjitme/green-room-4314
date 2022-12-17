@@ -24,8 +24,6 @@ export const postContactSuccess = (payload) => {
   };
 };
 
-// const data=new Date()
-
 // const x=   data.getDate()
 export const postcontact =
   (
