@@ -1,7 +1,9 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import {getContact} from '../../Redux/Contact/action'
-import {Box} from '@chakra-ui/react'
+import {Box,Table,TableContainer,TableCaption,Thead,Tr,Th,Tbody,Input,InputLeftAddon,InputGroup} from '@chakra-ui/react'
+import { ContactList } from "./ContactList"
+import {Search2Icon} from '@chakra-ui/icons'
 
 const ContactItem=()=>{
 
@@ -14,10 +16,52 @@ const ContactItem=()=>{
       dispatch(getContact())
     },[])
     console.log('item',contacts)
-//console.log('cc',contact)
+
     return (
-        <Box>
-cccccc
+        <Box  m='auto' w='90%'>
+            <Box  bg='#C4F1F9'>
+            <InputGroup>
+    <InputLeftAddon children={<Search2Icon/>} />
+              <Input  w='250px' type='text' placeholder='Search name,phone number ,email' />
+  </InputGroup>
+            </Box>
+           
+            <TableContainer mt='20px' >
+  <Table  variant='simple'>
+    <Thead bg='#C4F1F9'>
+      <Tr>
+        <Th></Th>
+        <Th>NAME</Th>
+        <Th>EMAIL</Th>
+        <Th >PHONE NUMBER</Th>
+        <Th>CONTACT OWNER</Th>
+        <Th>LEAD STATUS</Th>
+        <Th >CREATE DATE (GMT+5:30)</Th>
+        <Th></Th>
+      </Tr>
+    </Thead>
+    <Tbody>
+   
+   {
+    contacts.map((el)=>(
+        <ContactList
+           name={el.firstName+" "+el.lastName}
+           email={el.email}
+           phonenumber={el.phonenumber}
+           contactowner={el.contactowner}
+           leadstatus={el.LeadStatus}
+           createdate={el.createdate}
+        />
+   
+    ))
+   }
+   
+  
+    </Tbody>
+    
+  </Table>
+</TableContainer>
+          
         </Box>
     )
 }

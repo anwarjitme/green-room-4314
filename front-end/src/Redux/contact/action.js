@@ -23,21 +23,25 @@ export const postContactSuccess=(payload)=>{
   }
 }
 
+
+// const data=new Date()
+
+// const x=   data.getDate()
 export const postcontact=(email
-   ,firstName,lastName,jobTitle,phone,Lifecycle,LeadStatus,contactowner
+   ,firstName,lastName,jobTitle,phone,Lifecycle,LeadStatus,contactowner,x
     )=>(dispatch)=>{
-    
-    
-        const payload=[{
+    const x=new Date()
+        const payload={
             email:email,
             firstName:firstName,
             lastName:lastName,
             jobTitle:jobTitle,
-            phone:phone,
+            phonenumber:phone,
             Lifecycle:Lifecycle,
             LeadStatus:LeadStatus,
-            contactowner:contactowner
-        }]
+            contactowner:contactowner,
+            createdate: x.toDateString()
+        }
 
       axios.post('http://localhost:8080/Contacts',payload)
       .then((res)=>{
