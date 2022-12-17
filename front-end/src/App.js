@@ -7,8 +7,7 @@ import AllRoute from "./Pages/AllRoute";
 function App() {
   return (
     <div className="App">
- 
-      <AllRoute />
+      <AllRoute/>
     </div>
   );
 }
