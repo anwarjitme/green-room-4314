@@ -19,6 +19,7 @@ import { Search2Icon } from "@chakra-ui/icons";
 
 
 
+
 const ContactItem = () => {
   const dispatch = useDispatch();
   const contacts = useSelector((store) => store.contact.contacts);

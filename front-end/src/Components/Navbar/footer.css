@@ -1,0 +1,128 @@
+.frontFootercss{
+    background-color: rgb(33, 51, 67);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+}
+.footerleft{
+    display: flex;
+    text-align: left;
+   
+
+    column-gap: 50px;
+    line-height: 40px;
+    padding-left: 40px;
+    margin-top: 90px;
+    color: #9abfdd;
+    font-weight: 600px;
+ 
+   
+   
+    
+}
+.foolerleft1{
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+#footerh1{
+    color: white;
+    font-size: 20px;
+}
+.foolerleft2{
+  font-size: 14px;
+  margin-top: 40px;
+  
+}
+
+.footerright{
+    display: flex;
+    text-align: left;
+   
+
+    column-gap: 50px;
+    line-height: 40px;
+    padding-left: 60px;
+    margin-top: 90px;
+    color: #9abfdd;
+    font-weight: 600px;
+    border-left:1px solid #9FDDDC;
+    
+}
+.footerright1>h1{
+    color: white;
+    font-size: 20px;
+
+}
+.footerright1 p{
+
+    font-size: 14px;
+
+}
+
+
+
+.footerright2>h1{
+    color: white;
+    font-size: 20px;
+
+}
+.footerright2 p{
+
+    font-size: 14px;
+
+}
+
+
+
+.footerright3>h1{
+    color: white;
+    font-size: 20px;
+
+}
+.footerright3 p{
+
+    font-size: 14px;
+
+}
+
+
+.fotter-icos{
+    background-color: #213343;
+    color: #c4d5e2;
+  
+    border-top:1px solid #9FDDDC;
+   
+    column-gap: 30px;
+    padding: 60px;
+  
+}
+
+.footerh1tag{
+ 
+    width: 40%;
+    margin: auto;
+    display: flex;
+    font-size: 30px;
+    column-gap: 30px;
+
+    
+  
+
+}
+.footerimg >img{
+ display: block;
+ margin: auto;
+ margin-top: 30px;
+ margin-bottom: 30px;
+}
+
+.footerlast{
+    width: 25%;
+    margin: auto;
+    display: flex;
+    column-gap: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
