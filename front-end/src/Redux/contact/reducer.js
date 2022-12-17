@@ -12,7 +12,7 @@ const Contactreducer=(state=initialState,action)=>{
     switch(type){
         case  types.GET_CONTACT_ERROR:{
             return {
-               ...state,isLoading:false,isError:true
+               ...state,isLoading:false,
             }
         }
         case types.GET_CONTACT_REQUEST:{
@@ -20,11 +20,13 @@ const Contactreducer=(state=initialState,action)=>{
                 ...state,isLoading:true,isError:false
             }
         }
+        
         case types.GET_CONTACT_SUCCESS:{
             return {
                 ...state,isLoading:true,isError:false,contacts:payload
-            }
+            
         }
+    }
 
         case types.POST_CONTACT_SUCCESS:{
             const newContact=[...state.contacts,payload]

@@ -15,6 +15,7 @@ import { postdata } from '../Redux/Company/action';
 //import { json } from 'body-parser'
 //AddIcon,UnlockIcon,TriangleDownIcon
 //InputGroup,InputLeftAddon,InputRightAddon,Textarea,TabPanel,TabPanels
+import Companydata from "../Components/Company/Companydata"
 const init={
     Companydomainname:"",
     Companyname:"",
@@ -349,10 +350,11 @@ const Company=()=>{
 
            </Box>
 
-
+           <Companydata />
            </Box>
-  
+          
  )
+
 }
 export default Company
 
