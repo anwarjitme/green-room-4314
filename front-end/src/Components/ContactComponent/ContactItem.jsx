@@ -1,6 +1,6 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getContact } from "../../Redux/Contact/action";
+import { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import {getContact} from '../../Redux/contact/action'
 import {
   Box,
   Table,
@@ -16,6 +16,7 @@ import {
 } from "@chakra-ui/react";
 import { ContactList } from "./ContactList";
 import { Search2Icon } from "@chakra-ui/icons";
+
 
 
 const ContactItem = () => {

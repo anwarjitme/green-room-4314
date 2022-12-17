@@ -11,9 +11,10 @@ import { useDisclosure } from '@chakra-ui/react'
 import React from 'react'
 import {ContactItem} from './ContactItem'
 import { useState } from 'react'
+import { postcontact } from '../../Redux/contact/action'
 import { useDispatch,useSelector } from 'react-redux'
-import { postcontact } from '../../Redux/Contact/action'
 import { useToast } from '@chakra-ui/react'
+
 const ContactPage=()=>{
 
     const { isOpen, onOpen, onClose } = useDisclosure()
