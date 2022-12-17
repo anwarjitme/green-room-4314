@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from './Footer'
 import "./Learnandg.css"
 
 let  Data=[
@@ -67,10 +68,16 @@ text2:"customers"
 
 
   ]
+
+
+
 export default function Learmandg() {
 
   return (
+
     <div>
+
+
 
         <div className='Learngrowcss'> 
 
@@ -108,6 +115,7 @@ export default function Learmandg() {
             
         </div>
 
+
      
 
         <div className='lastdiv'>
@@ -142,6 +150,7 @@ export default function Learmandg() {
         </div>
 
 
+
      <div className="leastpartdiv">
        <div className='leastparth1'>
        <h1 id='headinglast1'>Start Growing With HubSpot Today</h1>
@@ -160,6 +169,11 @@ export default function Learmandg() {
         width="300px" />
        </div>
      </div>
+
+
+
+      <Footer/>
+
 
 
       

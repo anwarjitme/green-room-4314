@@ -11,12 +11,12 @@ const Home_navbar = () => {
   return (
 <div style={{display:"flex",flexDirection:"column"}}>
 
-    <div className='navbarcss'>
+    <div className='Hnavbarcss'>
 
 
-    <div className='up'>
+    <div className='Hup'>
          <div >
-    <ul className='left'>
+    <ul className='H-left'>
         <Link>High Contrast</Link>
         <Link>Contact Sales</Link>
 
@@ -27,7 +27,7 @@ const Home_navbar = () => {
 
 
     <div >
-    <ul className='right'>
+    <ul className='H-right'>
          <Link>Log in</Link>
           <Link>Customer Support</Link>
          <Link>About</Link>
