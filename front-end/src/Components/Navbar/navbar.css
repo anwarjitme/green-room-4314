@@ -1,11 +1,11 @@
-.navbarcss {
+.Hnavbarcss {
     display: flex;
     flex-direction: column;
   
     color: rgb(33, 51, 67);
     position: sticky;
     top: -50px;
-    border-bottom: 1px solid white;
+  
     background-color: white;
     z-index: 1000;
     cursor: pointer;
@@ -13,7 +13,7 @@
 
 
 
-.up{
+.Hup{
     display: flex;
     justify-content:space-between;
    
@@ -25,17 +25,17 @@
 }
 
 
-.left{
+.H-left{
     display: flex;
     gap: 20px;
     margin-left: 20px;
    
 }
-.left li Link {
+.H-left li Link {
     text-decoration: none;
 }
 
-.right{
+.H-right{
     display: flex;
     gap: 20px;
     margin-right: 50px;

@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import {getContact} from '../../Redux/Contact/action'
+import {getContact} from '../../Redux/contact/action'
 import {Box} from '@chakra-ui/react'
 
 const ContactItem=()=>{
