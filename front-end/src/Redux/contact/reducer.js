@@ -21,6 +21,7 @@ const Contactreducer=(state=initialState,action)=>{
             }
         }
         case types.GET_CONTACT_SUCCESS:{
+            console.log('payload',payload)
             return {
                 ...state,isLoading:true,isError:false,contacts:payload
             }

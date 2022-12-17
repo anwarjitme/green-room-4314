@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import {getContact} from '../../Redux/Contact/action'
+import {getContact} from '../../Redux/contact/action'
 import {Box,Table,TableContainer,TableCaption,Thead,Tr,Th,Tbody,Input,InputLeftAddon,InputGroup} from '@chakra-ui/react'
 import { ContactList } from "./ContactList"
 import {Search2Icon} from '@chakra-ui/icons'
@@ -19,6 +19,9 @@ const ContactItem=()=>{
 
     return (
         <Box  m='auto' w='90%'>
+            <Box>
+                
+            </Box>
             <Box  bg='#C4F1F9'>
             <InputGroup>
     <InputLeftAddon children={<Search2Icon/>} />

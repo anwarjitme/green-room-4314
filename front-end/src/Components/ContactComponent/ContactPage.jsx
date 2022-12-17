@@ -12,7 +12,7 @@ import React from 'react'
 import {ContactItem} from './ContactItem'
 import { useState } from 'react'
 import { useDispatch,useSelector } from 'react-redux'
-import { postcontact } from '../../Redux/Contact/action'
+import { postcontact } from '../../Redux/contact/action'
 import { useToast } from '@chakra-ui/react'
 const ContactPage=()=>{
 
