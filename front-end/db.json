@@ -1,22 +1,23 @@
 {
   "company": [
     {
-      "id": 1,
-      "Companydomainname": "gg",
-      "Companyname": "gg",
-      "Companyowner": "gg",
-      "Industry": "gg",
-      "Type": "gg",
-      "City": "gg",
-      "StateRegion": "gg",
-      "Postalcode": "ggff",
-      "Numberofemployees": "fff",
-      "Timezone": "fff",
-      "Description": "fff",
-      "Linkedlncompanypage": "gggg",
-      "Anuallreveneu": "hh"
+      "Companydomainname": "house.com",
+      "Companyname": "house",
+      "Companyowner": "vivek",
+      "Industry": "it",
+      "Type": "software",
+      "City": "Sasaram",
+      "StateRegion": "BIHAR",
+      "Postalcode": "821305",
+      "Numberofemployees": "100",
+      "Timezone": "",
+      "Description": "",
+      "Linkedlncompanypage": "www.kuku.com",
+      "Anuallreveneu": "45l",
+      "Phonenumber": "",
+      "phonenumber": "+917759952654",
+      "id": 1
     }
-   
   ],
   "Contacts": [
     {
