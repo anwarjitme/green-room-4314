@@ -1,12 +1,21 @@
-import {Tooltip,Box,MenuButton,Menu,MenuItem,Button,MenuList,Image,Stack,Avatar} from '@chakra-ui/react'
+import {Text,Tooltip,Box,MenuButton,Menu,MenuItem,Button,MenuList,Image,Stack,Avatar, Heading, Spacer} from '@chakra-ui/react'
 
 import {ChevronDownIcon,SearchIcon,SettingsIcon,BellIcon,CalendarIcon} from '@chakra-ui/icons'
 import { ContactPage } from './ContactPage'
-
+import {RxAvatar } from 'react-icons/rx';
+import { useNavigate,Link } from 'react-router-dom';
 
 const Navbar=()=>{
+const navigate=useNavigate()
+
+  const handleLogout=()=>{
+     navigate('/')
+  }
+
+
+
     return (
-    <Box mb='30px' position='-webkit-sticky' bg='#33475b' height="50px" >
+    <Box mb='30px' position='sticky' top='0' zIndex='1000' bg='#33475b' height="50px" >
        <Box display='flex' justifyContent='space-between'>
           <Box  display='flex'>
             <Box>
@@ -26,8 +35,8 @@ const Navbar=()=>{
                                         Contacts 
                                       </MenuButton>
                                       <MenuList bg='#33475b' >
-                                        <MenuItem bg='#33475b' color='white' >Contacts</MenuItem>
-                                        <MenuItem bg='#33475b'  color='white'>Companies</MenuItem>
+                                        <MenuItem bg='#33475b' color='white' ><Link to='/dashboard/contact'>Contacts</Link></MenuItem>
+                                        <MenuItem bg='#33475b'  color='white'> <Link to='/dashboard/company' >Companies</Link></MenuItem>
                                         <MenuItem bg='#33475b'  color='white'>Calls</MenuItem>
                                         <MenuItem bg='#33475b'  color='white' >Activity Feed</MenuItem>
                                         <MenuItem bg='#33475b'  color='white' >Lists</MenuItem>
@@ -213,13 +222,39 @@ const Navbar=()=>{
                                        </Button>
                       </Tooltip>
                  </Box>
-                 {/* <Box>
-                 <Stack direction='row'>
+                 <Box>
+               
+                 {/* <Stack direction='row'>
                         
-                        <Avatar src='https://bit.ly/broken-link' />
+                        <Avatar w='60%' borderRadius='90px' src='https://bit.ly/broken-link' />
+                      
                   </Stack>
-                   
-                  </Box>  */}
+                    */}
+               <Heading mt='7px' as='h2' color='white' size='lg'> <RxAvatar /></Heading>   
+                  </Box> 
+                  
+                  <Box>
+                  <Menu>
+                                      <MenuButton
+                                        px={4}
+                                        py={2}
+                                        transition='all 0.2s'
+                                        borderRadius='2px'
+                                        borderWidth='0px'
+                                        _hover={{bg:'#2e3f50' }}
+                                       color='white'
+                                      >
+                                       username
+                                      </MenuButton>
+                                      <MenuList bg='#33475b' >
+                                        <MenuItem bg='#33475b' onClick={handleLogout} color='white' >LogOut</MenuItem>
+                                       
+                                       
+                                      </MenuList>
+                                    </Menu>
+                  </Box>
+
+                 
           </Box>
 
         </Box> 
