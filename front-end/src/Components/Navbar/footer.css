@@ -126,3 +126,131 @@
     text-align: center;
     margin-top: 20px;
 }
+
+
+@media screen and (max-width:768px){
+    .frontFootercss{
+        width: 112%;
+        background-color: rgb(33, 51, 67);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        cursor: pointer;
+    }
+
+
+    .footerleft{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+       
+    
+        column-gap: 50px;
+        line-height: 40px;
+        padding-left: 80px;
+        margin-top: 90px;
+        color: #9abfdd;
+        font-weight: 600px;
+        font-size: 20px;
+     
+       
+       
+        
+    }
+
+
+    .foolerleft1{
+
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        font-size: 20px;
+    }
+
+
+    #footerh1{
+        color: white;
+        font-size: 25px;
+    }
+
+
+
+    .foolerleft2{
+        font-size: 20px;
+        margin-top: 50px;
+        
+      }
+
+      .footerright{
+        display: flex;
+        text-align: left;
+        flex-direction: column;
+       
+    
+        column-gap: 50px;
+        line-height: 40px;
+        padding-left: 80px;
+        margin-top: 90px;
+        color: #9abfdd;
+        font-weight: 600px;
+        border-left:1px solid #9FDDDC;
+        
+    }
+
+
+
+    .footerright1>h1{
+        color: white;
+        font-size: 25px;
+    
+    }
+    .footerright1 p{
+    
+        font-size: 20px;
+    
+    }
+
+    .footerright2>h1{
+        color: white;
+        font-size: 25px;
+    
+    }
+
+    .footerright2 p{
+
+        font-size: 20px;
+    
+    }
+
+    .footerright3>h1{
+        color: white;
+        font-size: 25px;
+    
+    }
+    .footerright3 p{
+    
+        font-size: 20px;
+    
+    }
+
+    .fotter-icos{
+        width: 110%;
+        background-color: #213343;
+        color: #c4d5e2;
+      
+        border-top:1px solid #9FDDDC;
+       
+        column-gap: 30px;
+        padding: 60px;
+      
+    }
+    
+    
+    
+
+
+
+
+}
