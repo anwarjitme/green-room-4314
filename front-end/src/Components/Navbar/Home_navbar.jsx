@@ -3,7 +3,18 @@ import React from 'react'
 import {Link} from "react-router-dom"
 import CardComponents from './CardComponents'
 import Frontpage from './Frontpage'
+import {
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuDivider,
+  Button,
 
+} from '@chakra-ui/react'
 import "./navbar.css"
 
 const Home_navbar = () => {
@@ -30,7 +41,25 @@ const Home_navbar = () => {
     <ul className='H-right'>
          <Link>Log in</Link>
           <Link>Customer Support</Link>
-         <Link>About</Link>
+      
+       
+       
+         
+
+           <Menu>
+  <MenuButton as={Link} >
+  <Link>About</Link>
+  </MenuButton>
+  <MenuList>
+    <MenuItem>About Us </MenuItem>
+    <MenuItem>Contact Us</MenuItem>
+    <MenuItem>Carrers</MenuItem>
+    <MenuItem>Investor Relations</MenuItem>
+    <MenuItem>Management Teams</MenuItem>
+  </MenuList>
+</Menu>
+         
+     
         
          
 
@@ -52,9 +81,44 @@ const Home_navbar = () => {
 
       <div >
           <ul className='links-down'>
-            <Link>Software</Link>
+
+
+          <Menu closeOnSelect={false}>
+  <MenuButton as={Link} colorScheme='blue'>
+  <Link>Software</Link>
+  </MenuButton>
+  <MenuList minWidth='240px'>
+    <MenuOptionGroup defaultValue='asc'>
+      <MenuItemOption value='asc'>The HubSpot CRM Platform</MenuItemOption>
+      <MenuItemOption value='desc'>Marketing Hub</MenuItemOption>
+   
+      <MenuItemOption value='email'>sales Hub</MenuItemOption>
+      <MenuItemOption value='phone'>Operation Hub</MenuItemOption>
+      <MenuItemOption value='country'>CMS Hub</MenuItemOption>
+    </MenuOptionGroup>
+  </MenuList>
+            </Menu>
+
             <Link>Pricing</Link>
-            <Link>Resources</Link>
+
+            <Menu closeOnSelect={false}>
+  <MenuButton as={Link} colorScheme='blue'>
+  <Link>Resources</Link>
+  </MenuButton>
+  <MenuList minWidth='250px'>
+    <MenuOptionGroup defaultValue='asc'>
+      <MenuItemOption value='asc'>Education</MenuItemOption>
+      <MenuItemOption value='desc'>Services</MenuItemOption>
+   
+      <MenuItemOption value='email'>user Resources</MenuItemOption>
+      <MenuItemOption value='phone'>Why HubSpot ?</MenuItemOption>
+      <MenuItemOption value='country'>HubSpot Ecosystem</MenuItemOption>
+    </MenuOptionGroup>
+  </MenuList>
+            </Menu>
+           
+         
+           
           </ul>
       </div>
 

@@ -67,3 +67,41 @@
     background-color:#FFCEC2 ;
     
 }
+
+@media screen and (max-width:768px){
+
+    .maincard{
+        width: 112%;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+      
+        gap: 30px;
+      
+        color: rgb(33, 51, 67);
+        background-color:#F6F9FC ;
+        padding: 90px ;
+    
+        
+    }
+
+    
+.card1{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 30px 10px;
+   
+    width:105% ;
+    background-color: white;
+}
+
+#cardp1{
+    width: 100%;
+    text-align: left;
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+
+
+}

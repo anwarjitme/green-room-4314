@@ -153,3 +153,145 @@
     color: #FF5C35;
     border: 1px solid   #FF5C35;
 }
+
+@media screen and (max-width:768px){
+
+    .mainpage{
+       width:112%;
+        display: flex;
+        flex-direction: column;
+       justify-content: space-evenly;
+        background-color: #D84527;
+        margin-top: 20px;
+      padding: 50px 20px;
+     
+        
+    }
+
+    .firstdiv{
+        color: white;
+        width: 100%;
+       text-align: left;
+    
+      
+       font-weight: 600;
+       padding: 90px 10px;
+    }
+
+    #heading1{
+
+        font-size: 40px;
+        line-height: 50px;
+       }
+
+       #heading2{
+
+        font-size: 40px;
+        line-height: 50px;
+       }
+
+       #para1{
+        width: 90%;
+        margin-top: 18px;
+        font-weight: 600;
+        font-size: 19px;
+    }
+
+    #para2{
+        width: 80%;
+        margin-top: 30px;
+        font-size: 20px;
+        font-weight: 700px;
+    }
+    #image1{
+        width: 100%;
+        margin-top: 60px;
+        margin: auto;
+        padding-right: 20px;
+        
+       
+       
+    }
+
+    #btn2{
+        width: 80%;
+        border: 1px solid white;
+        background-color: #FF5C35;
+        color: white;
+        font-weight: 600;
+       
+    }
+    .fbtn{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        font-size: 20px;
+        margin-top: 40px;
+       
+    }
+
+    .section2{
+    
+   
+
+      width: 112%;
+        background-color: #F6F9FC;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        height: 400px;
+    }
+    #sec-hed-1{
+        width: 90%;
+        margin: auto;
+        font-weight: 620;
+        color: rgb(33, 51, 67);
+        font-size: 35px;
+        text-align: left;
+    }
+
+    #sec-para-1{
+        color: rgb(33, 51, 67);
+        font-size: 20px;
+        width: 90%;
+     text-align: left;
+        margin: auto;
+        margin-top: 40px;
+        font-weight: 400;
+    }
+    
+    .secbtn{
+        width: 80%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        row-gap: 60px;
+        margin-top: 30px;
+        border-radius: 10px;
+        
+       
+    }
+
+    .secbtn>button{
+        background-color: #FF5C35;
+       color: white;
+       padding: 20px 25px;
+        font-weight: 650;
+       border-radius: 5px;
+       
+       
+      
+    
+    }
+
+    #sbtn2{
+        background-color:white;
+        color: #FF5C35;
+        border: 3px solid   #FF5C35;
+    }
+    
+    
+
+
+
+
+}
