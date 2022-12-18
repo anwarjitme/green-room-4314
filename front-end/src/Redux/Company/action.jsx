@@ -25,7 +25,7 @@ function postdata(kaji)
     return function (dispatch){
         dispatch(postrequest())
         return axios
-        .post("http://localhost:8080/company",kaji)
+        .post("https://green-room-data.vercel.app/company",kaji)
         .then((res)=>dispatch(postsucess(res.data)))
         .catch((err)=>dispatch(postfailure(err)))
     }
@@ -86,23 +86,24 @@ function deletfailure(payload)
 // }
 const getdata=()=>(dispatch)=>{
     dispatch(getrequest())
-    axios.get('http://localhost:8080/company')
-    .then(res=>{
+    axios
+      .get("https://green-room-data.vercel.app/company")
+      .then((res) => {
         //console.log('getData',res.data)
-        dispatch(getsucess(res.data))
-    })
-    .catch(err=>{
-        dispatch(getfailure(err))
-    })
+        dispatch(getsucess(res.data));
+      })
+      .catch((err) => {
+        dispatch(getfailure(err));
+      });
 }
 function deletcompany(id)
 {
     return function (dispatch){
         dispatch(deletrequest())
         return axios
-        .delete(`http://localhost:8080/company/${id}`)
-        .then((res)=>dispatch(deletsucess(res.data)))
-        .catch((err)=>dispatch(deletfailure(err)))
+          .delete(`https://green-room-data.vercel.app/company/${id}`)
+          .then((res) => dispatch(deletsucess(res.data)))
+          .catch((err) => dispatch(deletfailure(err)));
     }
 
 }
