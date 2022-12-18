@@ -35,6 +35,14 @@ const Contactreducer=(state=initialState,action)=>{
             }
         }
 
+        case types.DELETE_CONTACT_SUCCESS:{
+            let filterData=state.contacts.filter((el)=>el.id!==payload)
+
+            return {
+                ...state,contacts:filterData
+            }
+        }
+
         default :
             return state
     }

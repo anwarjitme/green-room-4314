@@ -18,6 +18,7 @@ import { getdata, postdata } from '../Redux/Company/action';
 //AddIcon,UnlockIcon,TriangleDownIcon
 //InputGroup,InputLeftAddon,InputRightAddon,Textarea,TabPanel,TabPanels
 import Companydata from "../Components/Company/Companydata"
+import { Navbar } from "../Components/ContactComponent/Navbar";
 const init={
     Companydomainname:"",
     Companyname:"",
@@ -97,7 +98,12 @@ const Company=()=>{
      }
 
  return (
+  <>
+<Navbar/>
+  
+
    <Box>
+
            <Box   display='flex' justifyContent='space-between' w='90%'  m='auto'>
                 <Box>
                     <Heading 
@@ -379,6 +385,7 @@ const Company=()=>{
 
            <Companydata />
            </Box>
+           </>
           
  )
 

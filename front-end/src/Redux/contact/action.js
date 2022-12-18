@@ -24,6 +24,14 @@ export const postContactSuccess = (payload) => {
   };
 };
 
+
+// export const deleteContactSuccess=(id,payload)=>{
+//   return {
+//     type:types.DELETE_CONTACT_SUCCESS,payload:id
+
+//   }
+// }
+
 // const x=   data.getDate()
 export const postcontact =
   (
@@ -49,6 +57,8 @@ export const postcontact =
       LeadStatus: LeadStatus,
       contactowner: contactowner,
       createdate: x.toDateString(),
+      todo:[],
+      note:[]
     };
 
     axios
@@ -62,9 +72,11 @@ export const postcontact =
       });
   };
 
-export const getContact = () => (dispatch) => {
+  
+export const getContact = (page) => (dispatch) => {
+ console.log('page',page)
   axios
-    .get("http://localhost:8080/Contacts")
+    .get(`http://localhost:8080/Contacts?_page=${page}&_limit=4`)
     .then((res) => {
       //console.log('getData',res.data)
       dispatch(getContantSuccess(res.data));
@@ -73,3 +85,12 @@ export const getContact = () => (dispatch) => {
       dispatch(getContantError(err));
     });
 };
+
+
+
+export const DeleteContact=(id)=>(dispatch)=>{
+    return axios.delete(`http://localhost:8080/Contacts/${id}`)
+    .then((res)=>{
+          dispatch({type:types.DELETE_CONTACT_SUCCESS,payload:id})
+    })
+}

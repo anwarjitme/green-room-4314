@@ -5,8 +5,8 @@ import {Box, Button, Heading,Text,Menu,MenuButton,MenuItem,MenuList,Drawer,
     DrawerOverlay,
     DrawerContent,
     DrawerCloseButton,
-Stack,FormLabel,Input,InputGroup,InputLeftAddon,InputRightAddon,Select,Textarea,Tabs,Tab,TabList,TabPanel,TabPanels} from '@chakra-ui/react'
-import { AddIcon,UnlockIcon,TriangleDownIcon,ChevronDownIcon,ExternalLinkIcon,LockIcon } from '@chakra-ui/icons'
+Stack,FormLabel,Input,Select,Tabs,Tab,TabList,} from '@chakra-ui/react'
+import { ChevronDownIcon,ExternalLinkIcon,LockIcon } from '@chakra-ui/icons'
 import { useDisclosure } from '@chakra-ui/react'
 import React from 'react'
 import {ContactItem} from './ContactItem'
@@ -14,6 +14,7 @@ import { useState } from 'react'
 import { postcontact } from '../../Redux/contact/action'
 import { useDispatch,useSelector } from 'react-redux'
 import { useToast } from '@chakra-ui/react'
+import { Pagination } from './Pagination'
 const ContactPage=()=>{
 
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -151,6 +152,7 @@ return (
               <Box>
                 <FormLabel htmlFor='username'>Phone number</FormLabel>
                 <Input
+                
                   ref={firstField}
                  value={phone}
                  onChange={(e)=>setPhone(e.target.value)}
@@ -202,7 +204,7 @@ return (
            </Box>
            
            <Box  w='90%' m='auto' >
-           <Tabs border='2px solid black' mt='20px' isFitted variant='enclosed'>
+           <Tabs  mt='20px' isFitted variant='enclosed'>
                   <TabList   gap='1' >
                     <Tab  bg='#C4F1F9' _selected={{ color: 'black', bg: 'white' }}>All contacts</Tab>
                     <Tab bg='#C4F1F9' _selected={{ color: 'black', bg: 'white' }}>My contacts</Tab>
@@ -224,6 +226,7 @@ return (
            </Box>
      <Box mt='20px' >
            <ContactItem  />
+           {/* <Pagination/> */}
      </Box>
 
            </Box>
