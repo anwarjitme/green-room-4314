@@ -1,5 +1,35 @@
-import React from "react";
-import "../Components/single_contact/single_contact.css"
+import React, { useEffect, useState } from "react";
+import {
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  Tooltip,
+  Tabs,
+  TabList,
+  Tab,
+  TabPanels,
+  TabPanel,
+  Flex,
+  InputGroup,
+  Input,
+  InputRightAddon,
+  Avatar,
+  Button,
+  Img,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  Textarea,
+  useDisclosure,
+  Text,
+  Box,
+} from "@chakra-ui/react";
+import "../Components/single_contact/single_contact.css";
 import {
   ChevronDownIcon,
   ExternalLinkIcon,
@@ -13,39 +43,50 @@ import {
   CopyIcon,
   Search2Icon,
 } from "@chakra-ui/icons";
-import {
-  Button,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
-  Tooltip,
- 
-  MenuDivider,
-  StackDivider,
-  Tabs,
-  TabList,
-  Tab,
-  TabPanels,
-  TabPanel,
-  Flex,
-  InputGroup,
-  Input,
-  InputRightAddon,
- 
-  
-  
-} from "@chakra-ui/react";
+
 import {
   Website_activity,
   Collapse_about,
   Collapse_communication,
 } from "../Components/single_contact/collaps1";
 import { Divider } from "@chakra-ui/react";
-// import Drawer_Right from "../Components/single_contact/Drower_right"
-import  { Company,Deals,Tickets } from "../Components/single_contact/collapce_right"
-
+import {
+  Company,
+  Deals,
+  Tickets,
+} from "../Components/single_contact/collapce_right";
+import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getContact } from "../Redux/contact/action";
 const Single_contact = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [text, setText] = useState("");
+  const [notes, setNotes] = useState([]);
+  const { id } = useParams();
+  const contacts = useSelector((store) => store.contact.contacts);
+
+  const [currentContact, setCurrentContact] = useState({});
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (contacts.length === 0) {
+      dispatch(getContact());
+    }
+  }, [contacts.length, dispatch]);
+  useEffect(() => {
+    if (id) {
+      const contact = contacts.find((item) => item.id === Number(id));
+      contact && setCurrentContact(contact);
+    }
+  }, [id, contacts]);
+  const x = new Date();
+  const handleAdd = () => {
+    const newText = {
+      name: text,
+      createdate: x.toDateString(),
+    };
+    setNotes([...notes, newText]);
+  };
+  console.log(text);
 
   return (
     <div className="container">
@@ -84,16 +125,19 @@ const Single_contact = () => {
         </div>
         <div className="profile">
           <div className="profile-up">
-            <img
+            <Avatar
+              color="white"
+              bg="#7c98b6"
               className="profile-img"
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAQlBMVEX///+ZmZmrq6uPj4+Tk5OWlpb19fXs7Ozw8PDQ0ND8/Pz5+fm7u7uMjIzMzMzJycmhoaGxsbHi4uLW1tbDw8Pc3NyOLk0uAAADwklEQVR4nO1a6dKqMAy1GyCbBeX9X/Ui6sjSHNKCX2fu9Px0LDlNkzRJc7kkJCQkJCQkJCQEo8qKfEKRVX8tu8yvdWetUc0IZazt6mte/pX0vO200saIGYwZf+ra/A+k34Rayp6zUOL2Ww69NNot/ANtZP9D8YrY+0IP6kcUcpb4N4XzDyKrG6b4iUJTZ+fKv4uds19Di/uJ4svaU/xEoT4tMBQ2QP7IwBbnyB+0x+nPYfRwhvxr0PbfSrieIF+FyxdCHWZwTP5xBkflH2Uw7J4/dTF9ccQSCyx/9A4rpRU7F5QO9sbSou1pceunTKjqbzBOGhsakVD803ah2QHFKl2Hyb+jbz5Wuyof6N9B90IGtOr6IuIrQu5GcADuAAdCZsgh5A39uYd7CTiFxj9DkaQHkFYNvMZIX/kDHQLpyALilvINR7QChCTdupTkIl8V9EABILgDO1R+qTJQQANcKqMt108FOYrBaCFYZnwc4UarEu8EaE7fPAigjXRoYRequiVykIaEE1D8M2hBWA8+AqFbNgGoSItWWrAQ626OEmY4DejHVLQbPlXATUyQCeDLHV7JfCPApQjSJDw7fplS40xXkxvJcXZquFkB3gfwA+QDgm+FFX2nvVVA+BPy3gmS10/MkC+9GDhvtn63irG81LDYr8aNg0HPWMYrUbAXvnWwMWhOFc/0Q5COzhgsG2G55HQRmKkpi8BYlcqhmEJbWQxyv0Y9ncCzHShkN0IKbgPxZAITCcPbux8BhhEardUCmtPJYhrhrhtqZbu2z7MZ8r7trNozRKYb7gQiLereGdGqvt7ppzIDEQzFxrQoH2ihSTBDMbqMVL3zjaqmLYidEpHXsXGF4DV6Ugns65iKqobX/C2oIpmdkBB+aJg2NFqxmwE7JaOSUnafhejusJNStxXSmdgWztyMn5Y7Uxu/xrfLjDwKE4cRGFiPbOEwA4/SzFGc+hzAtAeHCjyWb8pzj/N7Y2NHXuX5pkHhTkMRNimqV4NineEbujFFodx8wmv5qklFtSYRVm1LzybVSgVNQMu/WCRW3p3KZaPSBHT8y8UWvBuVCxX4N1pP+MI8NfV3wifmjhjQrJ63602ADY5W+CUQ9GYyu9IOEwh6sJj1W44SCHuymR3CQQKhj1bfB4hjBMKf7b4Pl1YG4FNehD9czp5ATAA+8g8NEcR+vI7/fB9/gCH+CEf8IZb4YzzxB5ku0Ue5LvGH2S7Rx/meiDzQ+KIQdaTzichDrS8OUcd6X4g72PxBzNHuhISEhISEhIT/Cf8AaMIrYS5bSmgAAAAASUVORK5CYII="
-              alt="profile-img"
+              name={currentContact.firstName}
+              src="https://bit.ly/broken-link"
             />
             <div className="profile-text">
-              <h1 className="profile-name">Anwar Hossain</h1>
-              <h3>MERN developer</h3>
+              <h1 className="profile-name">{currentContact.firstName}</h1>
+              <h3>{currentContact.jobTitle}</h3>
               <small>
-                anwar@gmail.com <CopyIcon />
+                {currentContact.email}
+                <CopyIcon ml={2} bg="teal.300" />
               </small>
             </div>
           </div>
@@ -177,33 +221,140 @@ const Single_contact = () => {
 
                 <TabPanels>
                   <TabPanel>
-                    <p>one!</p>
+                    <Flex
+                      justifyContent={"space-between"}
+                      p={5}
+                      my={15}
+                      bg={"white"}
+                      width={"90%"}
+                    >
+                      <Text
+                        color={"teal"}
+                      >{`${currentContact.firstName}`}</Text>
+
+                      <Text color={"#7c98b6"}>
+                        updated the lifecycle stage for this contact to Lead.
+                      </Text>
+                    </Flex>
                   </TabPanel>
                   <TabPanel>
-                    <p>two!</p>
+                    <>
+                      <Button
+                        float="right"
+                        bg="#425b76"
+                        color="white"
+                        onClick={onOpen}
+                      >
+                        Create Note
+                      </Button>
+                      <Modal isOpen={isOpen} onClose={onClose}>
+                        <ModalOverlay />
+                        <ModalContent>
+                          <ModalHeader bg={"#425b76"} color="white">
+                            Note
+                          </ModalHeader>
+                          <ModalCloseButton />
+                          <ModalBody pb={6}>
+                            <Textarea
+                              value={text}
+                              onChange={(e) => setText(e.target.value)}
+                              height={200}
+                              placeholder="Start typing to leave a note..."
+                            ></Textarea>
+                          </ModalBody>
+                          <Img
+                            maxW={"90%"}
+                            margin="auto"
+                            src="/Images/note.png"
+                            alt="ok"
+                          />
+                          <ModalFooter>
+                            <Button
+                              onClick={handleAdd}
+                              colorScheme="blue"
+                              mr={3}
+                            >
+                              Save
+                            </Button>
+                          </ModalFooter>
+                        </ModalContent>
+                      </Modal>
+                    </>
+                    <Box>
+                      {notes.map((item) => (
+                        <Flex
+                          justifyContent={"space-between"}
+                          p={5}
+                          my={15}
+                          bg={"white"}
+                          width={"90%"}
+                        >
+                          <Text>{item.name}</Text>
+                          <Text color={"#7c98b6"}>{item.createdate}</Text>
+                        </Flex>
+                      ))}
+                    </Box>
                   </TabPanel>
                   <TabPanel>
-                    <p>three!</p>
+                    <p>No data found</p>
+                  </TabPanel>
+                  <TabPanel>
+                    <p>No data found</p>
+                  </TabPanel>
+                  <TabPanel>
+                    <>
+                      <Button
+                        float="right"
+                        bg="#425b76"
+                        color="white"
+                        onClick={onOpen}
+                      >
+                        Create Task
+                      </Button>
+                      <Modal isOpen={isOpen} onClose={onClose}>
+                        <ModalOverlay />
+                        <ModalContent>
+                          <ModalHeader bg={"#425b76"} color="white">
+                            Task
+                          </ModalHeader>
+                          <ModalCloseButton />
+                          <ModalBody pb={6}>
+                            <Textarea
+                              height={200}
+                              placeholder="Start typing to leave a note..."
+                            ></Textarea>
+                          </ModalBody>
+                          <Img
+                            maxW={"90%"}
+                            margin="auto"
+                            src="/Images/note.png"
+                            alt="ok"
+                          />
+                          <ModalFooter>
+                            <Button colorScheme="blue" mr={3}>
+                              Save
+                            </Button>
+                          </ModalFooter>
+                        </ModalContent>
+                      </Modal>
+                    </>
                   </TabPanel>
                 </TabPanels>
               </Tabs>
             </TabPanel>
             <TabPanel>
-              <p>two!</p>
+              <Img src="/images/noData.png" alt="noData" />
             </TabPanel>
           </TabPanels>
         </Tabs>
-        <Divider />
       </div>
       <div className="right">
-    <Company/>
-    <Deals/>
-    <Tickets/>
+        <Company />
+        <Deals />
+        <Tickets />
       </div>
-
     </div>
   );
 };
 
 export default Single_contact;
-
