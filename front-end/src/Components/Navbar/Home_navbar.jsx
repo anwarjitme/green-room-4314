@@ -39,7 +39,7 @@ const Home_navbar = () => {
 
     <div >
     <ul className='H-right'>
-         <Link to="/login">Log in</Link>
+         <Link to="/login" >Log in</Link>
           <Link>Customer Support</Link>
       
        
