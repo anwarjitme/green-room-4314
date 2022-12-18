@@ -1,11 +1,10 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import {getContact} from '../../Redux/contact/action'
 import {
   Box,
   Table,
   TableContainer,
-  TableCaption,
   Thead,
   Tr,
   Th,
@@ -13,23 +12,49 @@ import {
   Input,
   InputLeftAddon,
   InputGroup,
+  Button
 } from "@chakra-ui/react";
 import { ContactList } from "./ContactList";
-import { Search2Icon } from "@chakra-ui/icons";
+import { Search2Icon,ChevronDownIcon } from "@chakra-ui/icons";
+import { Pagination } from "./Pagination";
 
 
 
 
 const ContactItem = () => {
+  const [page,setPage]=useState(1)
   const dispatch = useDispatch();
   const contacts = useSelector((store) => store.contact.contacts);
     useEffect(()=>{
-      dispatch(getContact())
-    },[])
+      dispatch(getContact(page))
+      console.log(page,'useEffect')
+    },[page])
     console.log('item',contacts)
+
+ const handleNext=()=>{
+     setPage((prev)=>prev+1)
+ }
+
+
+ const handlePrev=()=>{
+  setPage((prev)=>prev-1)
+ }
+
   return (
     <Box m="auto" w="90%">
-      <Box bg="#C4F1F9">
+           <Box display='flex' gap='2'>
+            <Button bg='white' color='#0091ae'>Contact owner <ChevronDownIcon/></Button>
+            <Button bg='white' color='#0091ae'>Create date <ChevronDownIcon/></Button>
+            <Button bg='white' color='#0091ae'>Last activity date <ChevronDownIcon/></Button>
+            <Button bg='white' color='#0091ae'>Lead status <ChevronDownIcon/></Button>
+            <Button bg='white' color='#0091ae'>All filters <ChevronDownIcon/></Button>
+            <Button bg='white' color='#0091ae'>Clear filter </Button>
+           </Box>
+
+
+
+
+      <Box mt='5px' bg="#C4F1F9">
         <InputGroup>
           <InputLeftAddon children={<Search2Icon />} />
           <Input
@@ -69,6 +94,12 @@ const ContactItem = () => {
           </Tbody>
         </Table>
       </TableContainer>
+      <Box  w='200px' m='auto'>
+        <Pagination 
+        handleNext={handleNext}
+        handlePrev={handlePrev}
+        page={page}/>
+      </Box>
     </Box>
   );
 };

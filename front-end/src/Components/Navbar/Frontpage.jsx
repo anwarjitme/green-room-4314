@@ -30,6 +30,8 @@ export default function Frontpage() {
 
         </div>
 
+        
+
 
             <div id='image1'>
 

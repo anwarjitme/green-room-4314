@@ -1,7 +1,15 @@
-import {Box,Tr,Td,Input, Heading,Checkbox, Link} from '@chakra-ui/react'
 import {useNavigate} from "react-router-dom"
-const ContactList=({name,email,phonenumber,contactowner,leadstatus,createdate,id})=>{
+import {Box,Tr,Td,Input, Heading,Checkbox,Image,Button,Popover,PopoverTrigger,PopoverContent,PopoverHeader,PopoverFooter,PopoverBody,PopoverArrow,PopoverCloseButton,ButtonGroup} from '@chakra-ui/react'
+import {DeleteIcon} from '@chakra-ui/icons'
+import { useDisclosure } from '@chakra-ui/react'
+import { useDispatch } from 'react-redux'
+import { DeleteContact } from '../../Redux/contact/action'
+const ContactList=({id,name,email,phonenumber,contactowner,leadstatus,createdate})=>{
   const navigate=useNavigate()
+  const dispatch=useDispatch()
+  const handleDelete=()=>{
+    dispatch(DeleteContact(id))
+  }
     return (
       <>
         <Tr>
@@ -33,7 +41,9 @@ const ContactList=({name,email,phonenumber,contactowner,leadstatus,createdate,id
           </Td>
           <Td border="1px solid grey">{createdate}</Td>
           <Td border="1px solid grey" _hover={{ color: "red" }}>
-            Delete
+         <Button bg='white' mr={5} >
+      <DeleteIcon onClick={handleDelete} />
+      </Button>
           </Td>
         </Tr>
       </>

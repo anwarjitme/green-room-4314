@@ -7,15 +7,18 @@ import {Box, Button, Heading,Text,Menu,MenuButton,MenuItem,MenuList,Drawer,
     DrawerCloseButton,
 Stack,FormLabel,Input,Select,Tabs,Tab,TabList} from '@chakra-ui/react'
 import { ChevronDownIcon,ExternalLinkIcon,LockIcon } from '@chakra-ui/icons'
+import { useToast } from '@chakra-ui/react'
+
 import { useDisclosure } from '@chakra-ui/react'
 import React, { useReducer } from 'react';
-import {useDispatch} from "react-redux"
+import {useDispatch,useSelector} from "react-redux"
 //import {useLocation} from "react-router-dom"
-import { postdata } from '../Redux/Company/action';
+import { getdata, postdata } from '../Redux/Company/action';
 //import { json } from 'body-parser'
 //AddIcon,UnlockIcon,TriangleDownIcon
 //InputGroup,InputLeftAddon,InputRightAddon,Textarea,TabPanel,TabPanels
 import Companydata from "../Components/Company/Companydata"
+import { Navbar } from "../Components/ContactComponent/Navbar";
 const init={
     Companydomainname:"",
     Companyname:"",
@@ -30,6 +33,7 @@ const init={
     Description:"",
     Linkedlncompanypage:"",
     Anuallreveneu:"",
+    Phonenumber:"",
 }
 const reducer=(state,action)=>
 {
@@ -61,6 +65,8 @@ const reducer=(state,action)=>
                                                         return {...state, Linkedlncompanypage:action.payload}
                                                         case "Anuallreveneu":
                                                             return {...state,Anuallreveneu:action.payload}
+                                                            case "Phonenumber":
+                                                              return {...state,phonenumber:action.payload}
             default:return state;
     }
 
@@ -71,25 +77,40 @@ const Company=()=>{
     const firstField = React.useRef()
      const [data,setdata]=useReducer(reducer,init)
      const dispatch=useDispatch()
+     const toast = useToast();
+     const company = useSelector((store) => store.companies.company);
      //const location=useLocation()
      const handeladd=()=>
      {
+      toast({
+        title: 'Account created.',
+        description: "We've created your account for you.",
+        status: 'success',
+        duration: 3000,
+        isClosable: true,
+      })
+
         if(JSON.stringify(data)!==JSON.stringify(init))
          {
            // console.log(data)
-           dispatch(postdata(data))
+           dispatch(postdata(data)).then(()=>dispatch(getdata()))
          }
      }
 
  return (
+  <>
+<Navbar/>
+  
+
    <Box>
+
            <Box   display='flex' justifyContent='space-between' w='90%'  m='auto'>
                 <Box>
                     <Heading 
                               as='h1' color='#0091ae' size='md'>Company
                                {/* <TriangleDownIcon  /> */}
                                </Heading>
-    <Text>Records</Text>
+    <Text>{company.length} Records</Text>
                 </Box>
                 <Box alignItems='center' justifyContent='center'   gap='2' display='flex'>
                     <LockIcon color='#0091ae' />  <Heading  color='#0091ae' as='text' size='sm'>Data Quality</Heading>
@@ -165,6 +186,18 @@ const Company=()=>{
                   value={data.Companyowner} 
                  
                   onChange={(e)=>setdata({type:"Companyowner",payload:e.target.value})}
+                  id='username'
+                 
+                />
+              </Box>
+              <Box>
+                <FormLabel htmlFor='username'>Phone number</FormLabel>
+                <Input
+                  ref={firstField}
+                  type="text"
+                  value={data.Phonenumber} 
+                 
+                  onChange={(e)=>setdata({type:"Phonenumber",payload:e.target.value})}
                   id='username'
                  
                 />
@@ -352,6 +385,7 @@ const Company=()=>{
 
            <Companydata />
            </Box>
+           </>
           
  )
 
