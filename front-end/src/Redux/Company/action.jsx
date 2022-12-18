@@ -52,6 +52,27 @@ function getfailure(payload)
         payload
     }
 }
+function deletrequest()
+{
+    return {
+        type:types.DELET_COMPANY_REQUEST,
+    }
+}
+function deletsucess(payload)
+{
+  //  console.log(payload)
+    return {
+        type:types.DELET_COMPANY_SUCESS,
+        payload
+    }
+}
+function deletfailure(payload)
+{
+    return {
+        type:types.DELET_COMPANY_FAILURE,
+        payload
+    }
+}
 // function getdata()
 // {
 //     return function (dispatch){
@@ -74,5 +95,16 @@ const getdata=()=>(dispatch)=>{
         dispatch(getfailure(err))
     })
 }
+function deletcompany(id)
+{
+    return function (dispatch){
+        dispatch(deletrequest())
+        return axios
+        .delete(`http://localhost:8080/company/${id}`)
+        .then((res)=>dispatch(deletsucess(res.data)))
+        .catch((err)=>dispatch(deletfailure(err)))
+    }
 
-export {postdata,getdata}
+}
+
+export {postdata,getdata,deletcompany}

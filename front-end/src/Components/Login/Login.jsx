@@ -37,16 +37,17 @@ const Login = () => {
     if (isAuth) {
       if (state) {
         naviget(state.form, { replace: true });
-      } else {
         naviget("/dashboard");
         toast({
           title: "Success",
-          description: "Welcome To The Admin Dashboard",
+          description: "Welcome To The user Dashboard",
           status: "success",
           duration: 2000,
           position: "top",
           isClosable: true,
         });
+      } else {
+        naviget("/dashboard");
       }
     }
   }, [isAuth]);
