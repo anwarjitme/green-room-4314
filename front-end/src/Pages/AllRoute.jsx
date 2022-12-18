@@ -26,7 +26,7 @@ const AllRoute = () => {
         }
       ></Route>
       <Route path="/contact" element={<ContactHome />}></Route>
-      <Route path="/single_contact" element={<Single_contact/>} ></Route>
+      <Route path="/contact/:id" element={<Single_contact/>} ></Route>
     </Routes>
   );
 };

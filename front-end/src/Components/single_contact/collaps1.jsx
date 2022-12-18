@@ -4,6 +4,13 @@ import {
   Box,
   useDisclosure,
   Container,
+  Card,
+  CardHeader,
+  Heading,
+  CardBody,
+  Stack,
+  StackDivider,
+  Text,
 } from "@chakra-ui/react";
 import React from "react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
@@ -16,14 +23,40 @@ function Collapse_about() {
         <ChevronDownIcon /> About this contact
       </Button>
       <Collapse in={isOpen} animateOpacity>
-        <Box p="40px" w="100%" color="gray" mt="10"  bg="gray" rounded="md" shadow="md">
-          <h1>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere,
-            ipsum dolor delectus iure molestias alias, debitis, ut eligendi
-            praesentium impedit laborum. Itaque illo aut facere ratione
-            temporibus ex quis fugit.
-          </h1>
-        </Box>
+        <Card width="100%" mt={20}>
+          <CardHeader>
+            <Heading size="md">Client Report</Heading>
+          </CardHeader>
+
+          <CardBody>
+            <Stack divider={<StackDivider />} spacing="4">
+              <Box>
+                <Heading size="xs" textTransform="uppercase">
+                  Summary
+                </Heading>
+                <Text pt="2" fontSize="sm">
+                  View a summary of all your clients over the last month.
+                </Text>
+              </Box>
+              <Box>
+                <Heading size="xs" textTransform="uppercase">
+                  Overview
+                </Heading>
+                <Text pt="2" fontSize="sm">
+                  Check out the overview of your clients.
+                </Text>
+              </Box>
+              <Box>
+                <Heading size="xs" textTransform="uppercase">
+                  Analysis
+                </Heading>
+                <Text pt="2" fontSize="sm">
+                  See a detailed analysis of all your business clients.
+                </Text>
+              </Box>
+            </Stack>
+          </CardBody>
+        </Card>
       </Collapse>
     </Container>
   );

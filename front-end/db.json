@@ -16,7 +16,6 @@
       "Linkedlncompanypage": "gggg",
       "Anuallreveneu": "hh"
     }
-   
   ],
   "Contacts": [
     {
@@ -68,6 +67,41 @@
       "contactowner": "Segun Adebayo",
       "createdate": "Sat Dec 17 2022",
       "id": 4
+    },
+    {
+      "email": "",
+      "firstName": "",
+      "lastName": "",
+      "jobTitle": "MERN developer",
+      "phonenumber": "12345",
+      "Lifecycle": "Customer",
+      "LeadStatus": "Open",
+      "contactowner": "Segun Adebayo",
+      "createdate": "Sun Dec 18 2022",
+      "id": 5
+    },
+    {
+      "email": "missingjit@gmail.com",
+      "firstName": "Md Anwar",
+      "lastName": "Hossain",
+      "jobTitle": "MERN Developer",
+      "phonenumber": "900009000",
+      "contactowner": "Segun Adebayo",
+      "createdate": "Sun Dec 18 2022",
+      "id": 6
+    },
+    {
+      "email": "my job",
+      "firstName": "anwar",
+      "lastName": "hossain",
+      "jobTitle": "developer",
+      "phonenumber": "9733299",
+      "contactowner": "Segun Adebayo",
+      "createdate": "Sun Dec 18 2022",
+      "id": 7
     }
+  ],
+  "notes": [
+    {}
   ]
 }

@@ -63,6 +63,7 @@ const ContactItem = () => {
                 contactowner={el.contactowner}
                 leadstatus={el.LeadStatus}
                 createdate={el.createdate}
+                id={el.id}
               />
             ))}
           </Tbody>

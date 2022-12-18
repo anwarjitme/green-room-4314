@@ -7,7 +7,8 @@ import { userSignupReducer } from "./UserSignup/userSignup.reducer";
 const rootReducer = combineReducers({
   signup: userSignupReducer,
   login: userLoginReducer,
- contact:Contactreducer,
- companies:companyreducer,
+  contact: Contactreducer,
+  companies: companyreducer,
+
 });
 export const store = legacy_createStore(rootReducer, applyMiddleware(thunk));
