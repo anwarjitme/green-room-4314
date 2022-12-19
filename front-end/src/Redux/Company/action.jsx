@@ -26,6 +26,7 @@ function postdata(kaji) {
       .catch((err) => dispatch(postfailure(err)));
   };
 }
+
 function getrequest() {
   return {
     type: types.GET_COMPANY_REQUEST,
