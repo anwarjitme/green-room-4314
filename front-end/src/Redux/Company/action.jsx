@@ -1,77 +1,66 @@
-import * as types from "./actionTypes"
+import * as types from "./actionTypes";
 import axios from "axios";
-function postrequest()
-{
-    return {
-        type:types.POST_COMPANY_REQUEST,
-    }
+function postrequest() {
+  return {
+    type: types.POST_COMPANY_REQUEST,
+  };
 }
-function postsucess(payload)
-{
-    return {
-        type:types.POST_COMPANY_SUCESS,
-        payload
-    }
+function postsucess(payload) {
+  return {
+    type: types.POST_COMPANY_SUCESS,
+    payload,
+  };
 }
-function postfailure(payload)
-{
-    return {
-        type:types.POST_COMPANY_FAILURE,
-        payload
-    }
+function postfailure(payload) {
+  return {
+    type: types.POST_COMPANY_FAILURE,
+    payload,
+  };
 }
-function postdata(kaji)
-{
-    return function (dispatch){
-        dispatch(postrequest())
-        return axios
-        .post("http://localhost:8080/company",kaji)
-        .then((res)=>dispatch(postsucess(res.data)))
-        .catch((err)=>dispatch(postfailure(err)))
-    }
-
+function postdata(kaji) {
+  return function (dispatch) {
+    dispatch(postrequest());
+    return axios
+      .post("https://green-room-data.vercel.app/company", kaji)
+      .then((res) => dispatch(postsucess(res.data)))
+      .catch((err) => dispatch(postfailure(err)));
+  };
 }
-function getrequest()
-{
-    return {
-        type:types.GET_COMPANY_REQUEST,
-    }
+function getrequest() {
+  return {
+    type: types.GET_COMPANY_REQUEST,
+  };
 }
-function getsucess(payload)
-{
+function getsucess(payload) {
   //  console.log(payload)
-    return {
-        type:types.GET_COMPANY_SUCESS,
-        payload
-    }
+  return {
+    type: types.GET_COMPANY_SUCESS,
+    payload,
+  };
 }
-function getfailure(payload)
-{
-    return {
-        type:types.GET_COMPANY_FAILURE,
-        payload
-    }
+function getfailure(payload) {
+  return {
+    type: types.GET_COMPANY_FAILURE,
+    payload,
+  };
 }
-function deletrequest()
-{
-    return {
-        type:types.DELET_COMPANY_REQUEST,
-    }
+function deletrequest() {
+  return {
+    type: types.DELET_COMPANY_REQUEST,
+  };
 }
-function deletsucess(payload)
-{
+function deletsucess(payload) {
   //  console.log(payload)
-    return {
-        type:types.DELET_COMPANY_SUCESS,
-        payload
-    }
+  return {
+    type: types.DELET_COMPANY_SUCESS,
+    payload,
+  };
 }
-function deletfailure(payload)
-{
-    return {
-        type:types.DELET_COMPANY_FAILURE,
-        payload
-    }
+function deletfailure(payload) {
+  return {
+    type: types.DELET_COMPANY_FAILURE,
+    payload,
+  };
 }
 // function getdata()
 // {
@@ -84,27 +73,26 @@ function deletfailure(payload)
 //     }
 
 // }
-const getdata=()=>(dispatch)=>{
-    dispatch(getrequest())
-    axios.get('http://localhost:8080/company')
-    .then(res=>{
-        //console.log('getData',res.data)
-        dispatch(getsucess(res.data))
+const getdata = () => (dispatch) => {
+  dispatch(getrequest());
+  axios
+    .get("https://green-room-data.vercel.app/company")
+    .then((res) => {
+      //console.log('getData',res.data)
+      dispatch(getsucess(res.data));
     })
-    .catch(err=>{
-        dispatch(getfailure(err))
-    })
-}
-function deletcompany(id)
-{
-    return function (dispatch){
-        dispatch(deletrequest())
-        return axios
-        .delete(`http://localhost:8080/company/${id}`)
-        .then((res)=>dispatch(deletsucess(res.data)))
-        .catch((err)=>dispatch(deletfailure(err)))
-    }
-
+    .catch((err) => {
+      dispatch(getfailure(err));
+    });
+};
+function deletcompany(id) {
+  return function (dispatch) {
+    dispatch(deletrequest());
+    return axios
+      .delete(`https://green-room-data.vercel.app/company/${id}`)
+      .then((res) => dispatch(deletsucess(res.data)))
+      .catch((err) => dispatch(deletfailure(err)));
+  };
 }
 
-export {postdata,getdata,deletcompany}
+export { postdata, getdata, deletcompany };

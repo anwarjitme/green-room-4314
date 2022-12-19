@@ -51,16 +51,6 @@ const Login = () => {
       }
     }
   }, [isAuth]);
-  if (isError) {
-    toast({
-      title: "Something Went Wrong ",
-      description: "please Fill all details",
-      status: "error",
-      duration: 2000,
-      position: "top",
-      isClosable: true,
-    });
-  }
   return (
     <div>
       <Container

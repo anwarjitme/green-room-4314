@@ -24,7 +24,6 @@ export const postContactSuccess = (payload) => {
   };
 };
 
-
 // export const deleteContactSuccess=(id,payload)=>{
 //   return {
 //     type:types.DELETE_CONTACT_SUCCESS,payload:id
@@ -57,12 +56,12 @@ export const postcontact =
       LeadStatus: LeadStatus,
       contactowner: contactowner,
       createdate: x.toDateString(),
-      todo:[],
-      note:[]
+      todo: [],
+      note: [],
     };
 
     axios
-      .post("http://localhost:8080/Contacts", payload)
+      .post("https://green-room-data.vercel.app/Contacts", payload)
       .then((res) => {
         console.log(res.data);
         dispatch(postContactSuccess(res.data));
@@ -72,11 +71,10 @@ export const postcontact =
       });
   };
 
-  
 export const getContact = (page) => (dispatch) => {
- console.log('page',page)
+  console.log("page", page);
   axios
-    .get(`http://localhost:8080/Contacts?_page=${page}&_limit=4`)
+    .get(`https://green-room-data.vercel.app/Contacts?_page=${page}&_limit=4`)
     .then((res) => {
       //console.log('getData',res.data)
       dispatch(getContantSuccess(res.data));
@@ -86,11 +84,10 @@ export const getContact = (page) => (dispatch) => {
     });
 };
 
-
-
-export const DeleteContact=(id)=>(dispatch)=>{
-    return axios.delete(`http://localhost:8080/Contacts/${id}`)
-    .then((res)=>{
-          dispatch({type:types.DELETE_CONTACT_SUCCESS,payload:id})
-    })
-}
+export const DeleteContact = (id) => (dispatch) => {
+  return axios
+    .delete(`https://green-room-data.vercel.app/Contacts/${id}`)
+    .then((res) => {
+      dispatch({ type: types.DELETE_CONTACT_SUCCESS, payload: id });
+    });
+};
