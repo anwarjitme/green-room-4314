@@ -15,8 +15,8 @@ Provides onBoarding ,Cunsultancy etc.
 - Chakra UI
 - MongoDB
 - Express
+![image](https://user-images.githubusercontent.com/96822665/208614697-23a826ad-0276-423f-b7ea-9ce3f614bd28.png)
 
-![me](https://user-images.githubusercontent.com/103638817/208614620-38847366-62ae-44d8-8d7d-c0ca6db797d2.png)
 
 ##Team Members:
             1. fw19_0076 - Md Anwar Hossain
