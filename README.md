@@ -9,6 +9,7 @@ Team Members:
             2. fw19_0117 - Jitendra Kumar Ghadei
             3. fw19_0148 - Kailash chandra
             4. fw19_0514 - Vivek Anjan
-            5. fw19_0609 - Patel Akshay
+            5. fw19_0609 - Patel Akshai
+
             
-Tech Stack : React,Redux,Chakra UI,MongoDB,Express
+*Tech Stack : React,Redux,Chakra UI,MongoDB,Express
