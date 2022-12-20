@@ -16,9 +16,8 @@ Provides onBoarding ,Cunsultancy etc.
 - MongoDB
 - Express
 
-![me](https://user-images.githubusercontent.com/105913793/205854808-aea7856a-7ba1-4a65-a115-38d95b9f1e0f.png)
-![me](https://user-images.githubusercontent.com/105913793/205854826-3790214a-fdd0-4d06-8991-727dc5b3140d.png)
-![me]()
+![me](https://user-images.githubusercontent.com/103638817/208614620-38847366-62ae-44d8-8d7d-c0ca6db797d2.png)
+
 ##Team Members:
             1. fw19_0076 - Md Anwar Hossain
             2. fw19_0117 - Jitendra Kumar Ghadei
