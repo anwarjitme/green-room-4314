@@ -11,3 +11,4 @@ Team Members:
             4. fw19_0514 - Vivek Anjan
             5. fw19_0609 - Patel Akshay
             
+Tech Stack : React,Redux,Chakra UI,MongoDB,Express
