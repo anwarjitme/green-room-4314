@@ -1,6 +1,9 @@
 # green-room-4314
 A collaborative project --> www.hubspot.com
 
+#Demo
+https://subtle-semifreddo-ade928.netlify.app/
+
 * A CRM platform that connects everything scaling companies need to deliver a best-in-class customer experience into one place
 Provides onBoarding ,Cunsultancy etc.
 ## Features
@@ -8,6 +11,10 @@ Provides onBoarding ,Cunsultancy etc.
 - FILTER
 - fOOTER
 - SIGNUP
+- post
+- fetch
+- delete
+- 
 
 ## Tech STack :
 - React
