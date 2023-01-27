@@ -1,49 +1,45 @@
-const mongoose = require("mongoose");
-
-const userScheme = new mongoose.Schema(
+const mongoose=require("mongoose");
+const signupschema=mongoose.Schema(
   {
     email: {
       type: String,
-      require: true,
-      unique: true,
+      //require: false,
+      //unique: false,
     },
     password: {
       type: String,
-      required: true,
+     // required: true,
     },
     first_name: {
       type: String,
-      required: true,
+     // required: true,
     },
     last_name: {
       type: String,
     },
     phone_number: {
       type: Number,
-      required: true,
+     // required: true,
     },
     company_name: {
       type: String,
-      required: true,
+     // required: true,
     },
     website_URL: {
       type: String,
-      required: true,
+     // required: true,
     },
     employees: {
       type: String,
-      required: true,
+     // required: true,
     },
     avtar: {
       type: String,
-      //   default: "https://bit.ly/broken-link",
-    },
-  },
-  {
-    versionKey: false,
-    timestamps: true,
+      
+    }
   }
-);
-
-const User = mongoose.model("user", userScheme);
-module.exports = User;
+)
+const signupmodel=mongoose.model("hotspotregister",signupschema);
+module.exports={
+    signupmodel
+}
