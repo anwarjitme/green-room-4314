@@ -1,37 +1,6 @@
 {
-  "company": [
-    {
-      "Companydomainname": "house.com",
-      "Companyname": "house",
-      "Companyowner": "vivek",
-      "Industry": "it",
-      "Type": "software",
-      "City": "Sasaram",
-      "StateRegion": "BIHAR",
-      "Postalcode": "821305",
-      "Numberofemployees": "100",
-      "Timezone": "",
-      "Description": "",
-      "Linkedlncompanypage": "www.kuku.com",
-      "Anuallreveneu": "45l",
-      "Phonenumber": "",
-      "phonenumber": "+917759952654",
-      "id": 1
-    }
-  ],
+  "company": [],
   "Contacts": [
-    {
-      "email": "asd@gmail.com",
-      "firstName": "ak",
-      "lastName": "as",
-      "jobTitle": "asjs",
-      "phonenumber": "44444",
-      "Lifecycle": "SalesQualifiedLead",
-      "LeadStatus": "New",
-      "contactowner": "Segun Adebayo",
-      "createdate": "Sun Dec 15 2022",
-      "id": 1
-    },
     {
       "email": "khackinge0@epa.gov",
       "firstName": "Kizzee",
@@ -126,18 +95,6 @@
       "LeadStatus": "open deal",
       "contactowner": "Segun Adebayo",
       "createdate": "Sun Dec 18 2022",
-      "id": 9
-    },
-    {
-      "email": "fdssas",
-      "firstName": "Jitendra",
-      "lastName": "Kumar ghadei",
-      "jobTitle": "gfd",
-      "phonenumber": "9348788367",
-      "Lifecycle": "Marketing Qualified Lead",
-      "LeadStatus": "open deal",
-      "contactowner": "Segun Adebayo",
-      "createdate": "Sun Dec 18 2022",
       "id": 10
     },
     {
@@ -151,6 +108,18 @@
       "contactowner": "Segun Adebayo",
       "createdate": "Sun Dec 18 2022",
       "id": 11
+    },
+    {
+      "email": "",
+      "firstName": "f",
+      "lastName": "",
+      "jobTitle": "",
+      "phonenumber": "",
+      "contactowner": "",
+      "createdate": "Sat Jan 28 2023",
+      "todo": [],
+      "note": [],
+      "id": 12
     }
   ],
   "notes": [

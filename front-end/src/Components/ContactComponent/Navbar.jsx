@@ -28,9 +28,19 @@ import { useNavigate, Link } from "react-router-dom";
 const Navbar = () => {
   const navigate = useNavigate();
   let neme = JSON.parse(localStorage.getItem("userData"));
+ 
   console.log(neme);
-  const handleLogout = () => {
+  const handleLogout = (id) => {
+    // console.log(id)
+    // neme.splice(id,1);
+    // localStorage.setItem("userData",JSON.stringify("neme"));
+    // neme1.splice(id,1);
+    // localStorage.setItem("userToken",JSON.stringify("neme1"));
+    localStorage.removeItem("userToken");
+      localStorage.removeItem("userData");
+      // window.location.reload(true)
     navigate("/");
+    window.location.reload(false)
   };
 
   return (
@@ -355,13 +365,35 @@ const Navbar = () => {
                 _hover={{ bg: "#2e3f50" }}
                 color="white"
               >
-                {neme.first_name}
-                {neme.last_name}
+              {neme.map((el)=>{
+                return (
+                  <>
+                  <p>{el.first_name}-{el.last_name}</p>
+                  
+                  </>
+                 
+                  
+               
+                )
+              })}
+                {/* {neme.first_name}
+                {neme.last_name} */}
               </MenuButton>
               <MenuList bg="#33475b">
-                <MenuItem bg="#33475b" onClick={handleLogout} color="white">
+              {neme.map((el)=>{
+                return (
+                  <>
+                  <MenuItem bg="#33475b" onClick={()=>handleLogout(el._id)} color="white">
                   LogOut
                 </MenuItem>
+                  
+                  </>
+                 
+                  
+               
+                )
+              })}
+               
               </MenuList>
             </Menu>
           </Box>

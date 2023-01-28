@@ -5,7 +5,7 @@ export const userLogin = (cred) => async (dispatch) => {
   try {
     let res = await axios.post("http://localhost:8080/user/login", cred);
     dispatch({ type: USER_LOGIN, payload: res.data });
-    console.log(res.data);
+    console.log("datacome"+res.data);
   } catch (error) {
     dispatch({ type: USER_LOGIN_ERROR });
   }

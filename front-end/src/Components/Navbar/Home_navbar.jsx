@@ -18,7 +18,7 @@ import {
 import "./navbar.css"
 
 const Home_navbar = () => {
-
+ 
   return (
 <div style={{display:"flex",flexDirection:"column"}}>
 
