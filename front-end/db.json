@@ -38,18 +38,6 @@
       "id": 4
     },
     {
-      "email": "",
-      "firstName": "",
-      "lastName": "",
-      "jobTitle": "MERN developer",
-      "phonenumber": "12345",
-      "Lifecycle": "Customer",
-      "LeadStatus": "Open",
-      "contactowner": "Segun Adebayo",
-      "createdate": "Sun Dec 18 2022",
-      "id": 5
-    },
-    {
       "email": "missingjit@gmail.com",
       "firstName": "Md Anwar",
       "lastName": "Hossain",
