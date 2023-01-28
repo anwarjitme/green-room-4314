@@ -77,7 +77,7 @@ function deletfailure(payload) {
 const getdata = () => (dispatch) => {
   dispatch(getrequest());
   axios
-    .get("https://green-room-data.vercel.app/company")
+    .get("http://localhost:4040/company")
     .then((res) => {
       //console.log('getData',res.data)
       dispatch(getsucess(res.data));
@@ -90,7 +90,7 @@ function deletcompany(id) {
   return function (dispatch) {
     dispatch(deletrequest());
     return axios
-      .delete(`https://green-room-data.vercel.app/company/${id}`)
+      .delete(`http://localhost:4040/company/${id}`)
       .then((res) => dispatch(deletsucess(res.data)))
       .catch((err) => dispatch(deletfailure(err)));
   };

@@ -61,7 +61,7 @@ export const postcontact =
     };
 
     axios
-      .post("https://green-room-data.vercel.app/Contacts", payload)
+      .post("http://localhost:4040/contacts", payload)
       .then((res) => {
         console.log(res.data);
         dispatch(postContactSuccess(res.data));
@@ -74,7 +74,7 @@ export const postcontact =
 export const getContact = (page) => (dispatch) => {
   console.log("page", page);
   axios
-    .get(`https://green-room-data.vercel.app/Contacts?_page=${page}&_limit=4`)
+    .get(`http://localhost:4040/Contacts?_page=${page}&_limit=4`)
     .then((res) => {
       //console.log('getData',res.data)
       dispatch(getContantSuccess(res.data));
@@ -86,7 +86,7 @@ export const getContact = (page) => (dispatch) => {
 
 export const DeleteContact = (id) => (dispatch) => {
   return axios
-    .delete(`https://green-room-data.vercel.app/Contacts/${id}`)
+    .delete(`http://localhost:4040/Contacts/${id}`)
     .then((res) => {
       dispatch({ type: types.DELETE_CONTACT_SUCCESS, payload: id });
     });
