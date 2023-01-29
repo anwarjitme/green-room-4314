@@ -91,11 +91,12 @@
     
    
 
-   
+   margin-top: 10px;
     background-color: #F6F9FC;
     padding-top: 50px;
     padding-bottom: 50px;
     height: 400px;
+   
 }
 
 #sec-hed-1{
@@ -104,13 +105,14 @@
     font-weight: 620;
     color: rgb(33, 51, 67);
     font-size: 35px;
+    text-align: center;
 }
 
 #sec-para-1{
     color: rgb(33, 51, 67);
     font-size: 18px;
     width: 65%;
- text-align: left;
+ text-align: center;
     margin: auto;
     margin-top: 40px;
     font-weight: 400;
@@ -123,9 +125,10 @@
     margin: auto;
     display: flex;
     gap: 20px;
-    margin-top: 30px;
+    margin-top: 80px;
     border-radius: 10px;
-    
+    margin-left: 550px;
+  
    
 }
 .secbtn>button{

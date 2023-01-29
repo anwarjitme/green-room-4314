@@ -8,10 +8,13 @@ const SignupPage = () => {
     <div>
       <Container maxW={"90%"} mt={"10"}>
         <Flex justify={"space-between"}>
-          <Image
+        <Link to="/">
+        <Image
             src="https://static.hsappstatic.net/ui-images/static-2.446/optimized/hubspot-wordmark.svg"
-            w={"10%"}
+            w={"90%"}
           />
+        </Link>        
+          
           <Text fontSize={"16px"}>
             Have an account?{" "}
             <Link
