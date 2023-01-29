@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 import CardComponents from './CardComponents'
 import Frontpage from './Frontpage'
 import {
@@ -18,7 +18,11 @@ import {
 import "./navbar.css"
 
 const Home_navbar = () => {
- 
+ const navigator=useNavigate();
+ const freedemo=()=>
+ {
+  navigator("/freedemo")
+ }
   return (
 <div style={{display:"flex",flexDirection:"column"}}>
 
@@ -124,7 +128,7 @@ const Home_navbar = () => {
 
      </div>
       <div className='button-down'>
-        <button id='first-btn'>Get a demo</button>
+        <button id='first-btn' onClick={freedemo}>Get a demo</button>
         <button>Get started free </button>
       </div>
 

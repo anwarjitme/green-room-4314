@@ -2,42 +2,6 @@
   "company": [],
   "Contacts": [
     {
-      "email": "khackinge0@epa.gov",
-      "firstName": "Kizzee",
-      "lastName": "Hackinge",
-      "jobTitle": "Nurse",
-      "phonenumber": "3611011832",
-      "Lifecycle": "SalesQualifiedLead",
-      "LeadStatus": "New",
-      "contactowner": "Segun Adebayo",
-      "createdate": "Sun Dec 18 2022",
-      "id": 2
-    },
-    {
-      "email": "rgerrell1@earthlink.net",
-      "firstName": "Randee",
-      "lastName": "Gerrell",
-      "jobTitle": "ComputerSystemsAnalystI",
-      "phonenumber": "7771961493",
-      "Lifecycle": "Sales Qualified Lead",
-      "LeadStatus": "Open",
-      "contactowner": "Segun Adebayo",
-      "createdate": "Sun Dec 18 2022",
-      "id": 3
-    },
-    {
-      "email": "fdssas",
-      "firstName": "Jitendra",
-      "lastName": "Kumar ghadei",
-      "jobTitle": "gfd",
-      "phonenumber": "9348788367",
-      "Lifecycle": "Marketing Qualified Lead",
-      "LeadStatus": "open deal",
-      "contactowner": "Segun Adebayo",
-      "createdate": "Sun Dec 18 2022",
-      "id": 4
-    },
-    {
       "email": "missingjit@gmail.com",
       "firstName": "Md Anwar",
       "lastName": "Hossain",
@@ -59,55 +23,7 @@
       "LeadStatus": "open deal",
       "contactowner": "Segun Adebayo",
       "createdate": "Sun Dec 18 2022",
-      "id": 7
-    },
-    {
-      "email": "fdssas",
-      "firstName": "Jitendra",
-      "lastName": "Kumar ghadei",
-      "jobTitle": "gfd",
-      "phonenumber": "9348788367",
-      "Lifecycle": "Marketing Qualified Lead",
-      "LeadStatus": "open deal",
-      "contactowner": "Segun Adebayo",
-      "createdate": "Sun Dec 18 2022",
-      "id": 8
-    },
-    {
-      "email": "fdssas",
-      "firstName": "Jitendra",
-      "lastName": "Kumar ghadei",
-      "jobTitle": "gfd",
-      "phonenumber": "9348788367",
-      "Lifecycle": "Marketing Qualified Lead",
-      "LeadStatus": "open deal",
-      "contactowner": "Segun Adebayo",
-      "createdate": "Sun Dec 18 2022",
       "id": 10
-    },
-    {
-      "email": "fdssas",
-      "firstName": "Jitendra",
-      "lastName": "Kumar ghadei",
-      "jobTitle": "gfd",
-      "phonenumber": "9348788367",
-      "Lifecycle": "Marketing Qualified Lead",
-      "LeadStatus": "open deal",
-      "contactowner": "Segun Adebayo",
-      "createdate": "Sun Dec 18 2022",
-      "id": 11
-    },
-    {
-      "email": "",
-      "firstName": "f",
-      "lastName": "",
-      "jobTitle": "",
-      "phonenumber": "",
-      "contactowner": "",
-      "createdate": "Sat Jan 28 2023",
-      "todo": [],
-      "note": [],
-      "id": 12
     }
   ],
   "notes": [
