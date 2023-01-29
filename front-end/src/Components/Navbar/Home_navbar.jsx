@@ -23,6 +23,10 @@ const Home_navbar = () => {
  {
   navigator("/freedemo")
  }
+ const startfree=()=>
+ {
+  navigator("/login")
+ }
   return (
 <div style={{display:"flex",flexDirection:"column"}}>
 
@@ -129,7 +133,7 @@ const Home_navbar = () => {
      </div>
       <div className='button-down'>
         <button id='first-btn' onClick={freedemo}>Get a demo</button>
-        <button>Get started free </button>
+        <button onClick={startfree}>Get started free </button>
       </div>
 
     </div>

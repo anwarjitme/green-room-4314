@@ -62,10 +62,13 @@ const Login = () => {
         mt={"12"}
         maxW={"30%"}
       >
-        <Image
+      <Link to="/">
+      <Image
           src="https://static.hsappstatic.net/ui-images/static-2.446/optimized/hubspot-wordmark.svg"
-          w={"40%"}
+          w={"100%"}
         />
+      </Link>
+        
         <Text fontSize={"16px"}>
           Don't have an account?
           <Link style={{ color: "#527a8c", fontWeight: "bold" }} to={"/signup"}>
