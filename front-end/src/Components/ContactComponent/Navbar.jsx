@@ -55,12 +55,15 @@ const Navbar = () => {
       <Box display="flex" justifyContent="space-between">
         <Box display="flex">
           <Box>
-            <Image
+          <Link to="/">
+          <Image
               ml="10px"
               mt="7px"
-              w="30px"
+              w="20px"
               src="https://seeklogo.com/images/H/hubspot-logo-A06A6E0DF5-seeklogo.com.png"
             />
+          </Link>
+           
           </Box>
           <Box>
             <Menu>

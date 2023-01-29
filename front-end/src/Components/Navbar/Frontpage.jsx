@@ -1,11 +1,20 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import CardComponents from './CardComponents';
   
 import "./frontpage.css"
 
 
 export default function Frontpage() {
-
+  const navigate=useNavigate()
+ const free=()=>
+ {
+navigate("/login")
+ }
+ const demo=()=>
+ {
+ navigate("/freedemo")
+ }
 
   return (
 
@@ -20,8 +29,8 @@ export default function Frontpage() {
 
         <p id='para1'>Finally, a CRM platform that’s both powerful and easy to use. Create delightful customer experiences. Have a delightful time doing it.</p>
         <div className='fbtn'>
-        <button id='btn1'>Get a demo</button>
-        <button id='btn2'>Get started free</button>
+        <button id='btn1' onClick={demo}>Get a demo</button>
+        <button id='btn2' onClick={free}>Get started free</button>
 
         </div>
         <p id='para2'>Get started with free tools, 
@@ -62,7 +71,7 @@ export default function Frontpage() {
               </p>
 
             <div className='secbtn'>
-              <button id='sbtn1'>Get free CRM</button>
+              <button id='sbtn1' >Get free CRM</button>
               <button id='sbtn2'>Demo premium CRA</button>
             </div>
 
