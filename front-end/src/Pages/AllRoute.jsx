@@ -8,6 +8,7 @@ import Hnavbar from "./Hnavbar";
 import LoginPage from "./LoginPage";
 import SignupPage from "./SignupPage";
 import Single_contact from "./single_contact";
+import Freedemo from "../Components/FreeDemo/Freedemo";
 
 const AllRoute = () => {
   return (
@@ -16,6 +17,7 @@ const AllRoute = () => {
       <Route path="/" element={<Hnavbar />}></Route>
       <Route path="/signup" element={<SignupPage />}></Route>
       <Route path="/login" element={<LoginPage />}></Route>
+      <Route path="/freedemo" element={<Freedemo />}></Route>
       <Route
         path="/dashboard/company"
         element={

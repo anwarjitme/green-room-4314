@@ -53,15 +53,17 @@ userrouter.post("/register",async(req,res)=>{
 userrouter.post("/login",async(req,res)=>{
     const {email,password}=req.body;
     try{
-        const postlogin=await signupmodel.find({email});
-        if(postlogin.length>0)
+        const user=await signupmodel.find({email});
+        if(user.length>0)
         {
-            bcrypt.compare(password, postlogin[0].password, function(err, result) {
+            bcrypt.compare(password, user[0].password, function(err, result) {
                 
                 if(result)
                 {
                     const token=jwt.sign({ foo: 'bar' }, 'masai');
-                    res.send({"msg":"login sucessfully","token":token})
+                    res.send({"msg":"login sucessfully","token":token,"user":user})
+                    // res.send({ token: `${user._id}:${user.first_name}`, user });
+                    console.log(result)
                 }
                 else{
                     console.log("wrong data")
