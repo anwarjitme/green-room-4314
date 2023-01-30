@@ -9,7 +9,7 @@ import LoginPage from "./LoginPage";
 import SignupPage from "./SignupPage";
 import Single_contact from "./single_contact";
 import Freedemo from "../Components/FreeDemo/Freedemo";
-
+import Cartlink1 from "../Components/FreeDemo/Cartlink1";
 const AllRoute = () => {
   return (
     // <div>AllRoute</div>
@@ -18,6 +18,7 @@ const AllRoute = () => {
       <Route path="/signup" element={<SignupPage />}></Route>
       <Route path="/login" element={<LoginPage />}></Route>
       <Route path="/freedemo" element={<Freedemo />}></Route>
+      <Route path="/cartlink1" element={<Cartlink1 />}></Route>
       <Route
         path="/dashboard/company"
         element={
