@@ -97,10 +97,15 @@ const Home_navbar = () => {
   </MenuButton>
   <MenuList minWidth='240px'>
     <MenuOptionGroup defaultValue='asc'>
-      <MenuItemOption value='asc'>The HubSpot CRM Platform</MenuItemOption>
+    <Link to="/cartlink1"> <MenuItemOption value='asc'>The HubSpot CRM Platform</MenuItemOption></Link>
+      <Link to="/cartlink1">
       <MenuItemOption value='desc'>Marketing Hub</MenuItemOption>
-   
-      <MenuItemOption value='email'>sales Hub</MenuItemOption>
+      </Link>
+      
+   <Link to="/cartlink1">
+   <MenuItemOption value='email'>sales Hub</MenuItemOption>
+   </Link>
+      
       <MenuItemOption value='phone'>Operation Hub</MenuItemOption>
       <MenuItemOption value='country'>CMS Hub</MenuItemOption>
     </MenuOptionGroup>

@@ -1,7 +1,13 @@
 import React from 'react'
-import { Box, Container, Flex,Image,Grid,GridItem, Heading} from '@chakra-ui/react'
-import { Link } from 'react-router-dom'
+import { Box, Container, Flex,Image,Grid,GridItem,Text, Heading, Button} from '@chakra-ui/react'
+import { Link, useNavigate } from 'react-router-dom'
 const Freedemo = () => {
+    const nav=useNavigate()
+    const demo=()=>
+    {
+        
+        nav("/signup")
+    }
   return (
     <>
     <Box border="1px solid none" w="100%" h="60px" position="sticky" top="0" bg="white"   >
@@ -77,7 +83,16 @@ const Freedemo = () => {
   
 </Grid>
             </Box>
-            <Box border="1px solid green" w="40%" h="100vh" mt="100px" marginRight="100px" bg="white">hii</Box>
+            <Box border="1px solid none" w="40%" h="100vh" mt="100px" marginRight="100px" bg="white">
+             <Box border="1px solid green" w="100%" h="16vh">
+             <Text fontSize="37" fontWeight="700" ml="5%" color="#213343" >Get a Free Demo of HubSpot's CRM Platform</Text>
+              </Box> 
+                    <Box border="1px solid none" w="100%" h="84vh" backgroundImage={"https://www.hubspot.com/hs-fs/hubfs/Saloon-Table-Wild-West.jpg?width=600&height=495&name=Saloon-Table-Wild-West.jpg"} backgroundSize="cover">
+                    <Button onClick={demo} mt="50%" color={"white"} bg="#ff5c35" ml="50%" >GET free demo</Button>
+                    </Box>            
+                  {/* <Button onClick={demo} >GET free demo</Button> */}
+            
+            </Box>
         </Flex>
         <Box border="1px solid none" w="100%" h="190px" mt="20">
       <Box width="83%" mt="10" ml="130" >
