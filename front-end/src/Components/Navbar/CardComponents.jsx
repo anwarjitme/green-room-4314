@@ -3,6 +3,7 @@ import "./card.css"
 import {AiFillCheckCircle} from "react-icons/ai";
 import { Checkbox, Stack } from '@chakra-ui/react'
 import Learmandg from './Learmandg';
+import { useNavigate } from 'react-router-dom';
 
 let arr=[
     {logo:"https://www.hubspot.com/hubfs/product_icons_2022/MarketingHub_Icon_Gradient_RGB_24px.svg",p1:"Marketing Hub",p2:"Marketing software to help you grow traffic, convert more visitors, and run complete inbound marketing campaigns at scale.",
@@ -28,7 +29,11 @@ check1:"  Data sync",check2:"Programmable automation",check3:" Data quality auto
 
 
 export default function CardComponents() {
-
+const navigator=useNavigate();
+const card=()=>
+{
+  navigator("/cartlink1")
+}
   return (
 <>
     <div className='maincard'>
@@ -84,7 +89,7 @@ defaultChecked>
  
  </div>
 </div>
-<button id='cardbtn'>Get started</button>
+<button id='cardbtn' onClick={card}>Get started</button>
 
 </div>
 

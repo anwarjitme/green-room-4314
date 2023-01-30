@@ -120,11 +120,11 @@ export default function Footer() {
      
    <div className='fotter-icos'>
       <div className='footerh1tag'>
-        <h1><FaFacebook/></h1>
-        <h1><FaInstagram/></h1>
-        <h1><FaTwitter/></h1>
-        <h1><FaYoutube/></h1>
-        <h1><FaLinkedin/></h1>
+       <a href='https://www.facebook.com/hubspot'><h1><FaFacebook/></h1></a> 
+       <a href='https://www.instagram.com/hubspot/'><h1><FaInstagram/></h1></a> 
+        <a href='https://twitter.com/HubSpot'><h1><FaTwitter/></h1></a>
+        <a href='https://www.youtube.com/@HubSpotMarketing'><h1><FaYoutube/></h1></a>
+        <a href='https://www.linkedin.com/company/hubspot/'><h1><FaLinkedin/></h1></a>
         <h1><FaMedium/></h1>
         <h1><FaTiktok/></h1>
       </div>
