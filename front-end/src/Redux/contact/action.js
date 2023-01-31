@@ -56,7 +56,7 @@ export const postcontact =
       LeadStatus: LeadStatus,
       contactowner: contactowner,
       createdate: x.toDateString(),
-   
+      
     };
 
     axios
@@ -73,7 +73,7 @@ export const postcontact =
 export const getContact = (page) => (dispatch) => {
   console.log("page", page);
   axios
-    .get(`https://easy-plum-monkey-wear.cyclic.app/contact/data/`)
+    .get(`https://easy-plum-monkey-wear.cyclic.app/contact/data?_page=${page}&_limit=4`)
     .then((res) => {
       //console.log('getData',res.data)
       dispatch(getContantSuccess(res.data));
@@ -84,11 +84,9 @@ export const getContact = (page) => (dispatch) => {
 };
 
 export const DeleteContact = (id) => (dispatch) => {
-  console.log(id);
   return axios
     .delete(`https://easy-plum-monkey-wear.cyclic.app/contact/data/${id}`)
     .then((res) => {
       dispatch({ type: types.DELETE_CONTACT_SUCCESS, payload: id });
-     
     });
 };
