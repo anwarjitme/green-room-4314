@@ -35,6 +35,7 @@ const ContactList = ({
   const dispatch = useDispatch();
   const handleDelete = () => {
     dispatch(DeleteContact(id));
+    window.location.reload(false)
   };
   return (
     <>
