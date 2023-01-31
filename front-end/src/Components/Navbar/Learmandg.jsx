@@ -1,4 +1,5 @@
 import React from 'react'
+import {  useNavigate } from 'react-router-dom'
 import Footer from './Footer'
 import "./Learnandg.css"
 
@@ -72,7 +73,7 @@ text2:"customers"
 
 
 export default function Learmandg() {
-
+const naviagte=useNavigate()
   return (
 
     <div>
@@ -156,8 +157,11 @@ export default function Learmandg() {
        <h1 id='headinglast1'>Start Growing With HubSpot Today</h1>
        <p id='lastdivp1'>With tools to make every part of your process more human and a support team excited to help you, getting started with inbound has never been easier.</p>
        <div className='lastsecbtn'>
-        <button id="lbtn1">Get a demo</button>
-        <button id='lbtn2'>Get started free</button>
+       <button id="lbtn1" onClick={()=>naviagte("/freedemo")} >Get a demo</button>
+        
+        <button id='lbtn2' onClick={()=>naviagte("/signup")}>Get started free </button>
+       
+        
        </div>
        <p id='lastparp2'>Get started with free tools, or get more with our premium software.</p>
 
